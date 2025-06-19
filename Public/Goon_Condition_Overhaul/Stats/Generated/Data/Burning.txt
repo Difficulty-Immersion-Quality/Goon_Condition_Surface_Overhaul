@@ -1,0 +1,34 @@
+// ==================================== Burning ====================================
+// Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
+
+new entry "BURNING"
+type "StatusData"
+data "StatusType" "BOOST"
+using "BURNING"
+// // Burning
+// data "DisplayName" "h978e1507gf90eg49b5ga5f8g5b1c0548d77f;1"
+// // Takes [1] per turn.
+// data "Description" "h749103c1g241dg4d07g923eg977717a2d981;4"
+// Takes [1] at the start of each turn, for each round of Burning on the target.
+data "Description" "h67f4f865g2bf9g4282g9cadg85f6fdea55b1;1"
+// data "DescriptionParams" "DealDamage(1d4,Fire)"
+// data "Icon" "Status_Burning"
+// data "FormatColor" "Fire"
+// data "HitAnimationType" "MagicalDamage_External"
+// data "SoundLoop" "Misc_Status_Burning_MO"
+// data "SoundStop" "Misc_Status_Burning_MO_Stop"
+// data "StackId" "BURNING"
+data "StackType" "Additive"
+data "StackPriority" "1"
+// data "SurfaceChange" "Ignite"
+// data "TickType" "StartTurn"
+// data "Boosts" "IF(ConditionResult(context.AttackWeapon.IsValid) or (context.Target.IsValid and Item()) or not (context.Target.IsValid or not Item(context.Source))):WeaponDamage(1d4, Fire);IF(Item(context.Source)):WeaponProperty(Unstowable);"
+// data "TooltipDamage" "DealDamage(1d4,Fire)"
+// data "TickFunctors" "IF(not Tagged('TORCH')):DealDamage(1d4,Fire)"
+data "TickFunctors" "IF(not Tagged('TORCH') and StatusDurationLessThan(context.Target,'BURNING',2)):DealDamage(1d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',2)):DealDamage(2d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',3)):DealDamage(3d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',4)):DealDamage(4d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',5)):DealDamage(5d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',6)):DealDamage(6d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',7)):DealDamage(7d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',8)):DealDamage(8d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',9)):DealDamage(9d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',10)):DealDamage(10d4,Fire)"
+// data "StatusPropertyFlags" "InitiateCombat;Burning;DisableOverhead;IgnoreResting"
+data "StatusPropertyFlags" "InitiateCombat;Burning;DisableOverhead;IgnoreResting;MultiplyEffectsByDuration"
+// data "OnApplyFunctors" "IF(not Tagged('TORCH')):DealDamage(1d4,Fire)"
+data "OnApplyFunctors" "IF(not Tagged('TORCH') and StatusDurationLessThan(context.Target,'BURNING',2)):DealDamage(1d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',2)):DealDamage(2d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',3)):DealDamage(3d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',4)):DealDamage(4d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',5)):DealDamage(5d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',6)):DealDamage(6d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',7)):DealDamage(7d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',8)):DealDamage(8d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',9)):DealDamage(9d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',10)):DealDamage(10d4,Fire)"
+// data "StatusGroups" "SG_Surface;SG_Light"
+// data "StatusEffect" "2156dd48-f83b-4060-9a4e-cab994da8857"
