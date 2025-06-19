@@ -34,7 +34,7 @@ using "BURNING"
 // data "DisplayName" "h978e1507gf90eg49b5ga5f8g5b1c0548d77f;1"
 // // Takes [1] per turn.
 // data "Description" "h749103c1g241dg4d07g923eg977717a2d981;4"
-// Takes [1] per turn for each round of Burning on the target.
+// Takes [1] at the start of each turn, for each round of Burning on the target.
 data "Description" "h67f4f865g2bf9g4282g9cadg85f6fdea55b1;1"
 // data "DescriptionParams" "DealDamage(1d4,Fire)"
 // data "Icon" "Status_Burning"

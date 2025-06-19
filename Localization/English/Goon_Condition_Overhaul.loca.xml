@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "BURNING" --> <content contentuid="" version="1">Takes [1] at the start of each turn, for each round of Burning on the target.</content>
+	<!-- "BLEEDING" --> <content contentuid="" version="1">Takes [1] at the start of each turn, for each round of Bleeding on the target. Has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When you receive healing you must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to cure the bleeding.</content>
+	<!-- "HEAVY_BLEEDING" --> <content contentuid="habe265c7ga4abg41cag8e5egef049f4e14e1" version="1">Takes [1] at the start of each turn, for each round of Heavy Bleeding on the target. Has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When you receive healing you must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to cure the bleeding.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
