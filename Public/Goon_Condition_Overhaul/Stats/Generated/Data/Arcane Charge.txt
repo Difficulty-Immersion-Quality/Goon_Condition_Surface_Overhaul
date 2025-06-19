@@ -1,0 +1,22 @@
+// ==================================== Arcane Charge ====================================
+// Changes: Damage now scales with Proficiency Bonus instead of a flat +2.
+
+new entry "MAG_GISH_ARCANE_CHARGE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_GISH_ARCANE_CHARGE"
+// Arcane Charge
+// data "DisplayName" "h2b4b1619g0580g4ba2g9c7bg6c81cac40be5;4"
+// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a +[1] bonus to damage with spells.
+// data "Description" "h8b3ddcacge2d8g41e0ga7eegb3cefedd8678;15"
+// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity gains their &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; of [1] to damage with spells.
+// data "Description" "h8b3ddcacge2d8g41e0ga7eegb3cefedd8678;15"
+// data "DescriptionParams" "2"
+data "DescriptionParams" "ProficiencyBonus"
+// data "Icon" "statIcons_GishArcaneCharge"
+// data "SoundLoop" "MAG_Status_Boost_Gish_ArcaneCharge_MO"
+// data "SoundStop" "MAG_Status_Boost_Gish_ArcaneCharge_MO_Stop"
+// data "StackId" "MAG_GISH_ARCANE_CHARGE"
+// data "Boosts" "IF(HasStatus('FLANKED') and IsSpell()):DamageBonus(2)"
+data "Boosts" "IF(HasStatus('FLANKED') and IsSpell()):DamageBonus(ProficiencyBonus)"
+// data "StatusEffect" "4425d0c5-277f-4714-bcdd-b2e97eb615ec"

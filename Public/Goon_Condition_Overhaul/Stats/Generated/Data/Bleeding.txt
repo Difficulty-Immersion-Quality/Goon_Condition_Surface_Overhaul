@@ -1,4 +1,6 @@
 // ==================================== Bleeding ====================================
+// Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
+// Includes native support for Arsenal Overhaul's "Heavy Bleeding" condition, increasing its damage from a flat 4 to 1d6 with the same scaling as Bleeding.
 
 new entry "BLEEDING"
 type "StatusData"
