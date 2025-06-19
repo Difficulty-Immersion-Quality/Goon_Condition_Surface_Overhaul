@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentList>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+
+	<!-- OLD -->
+	<content contentuid="haad505a6gcbb8g4336ga884ge16bb8338ec4" version="1">Takes [1] per turn.&lt;br&gt;&lt;br&gt;At the beginning of this creature's turn the flames will grow hotter, ever increasing with intensity.</content>
+	<content contentuid="h26545f20gdbe5g48dcg94bdg0a903a40b165" version="1">Takes [1] per turn.&lt;br&gt;&lt;br&gt;These flames are at their maximum intensity.</content>
+	<content contentuid="hf7b6ffc1g0752g4ad6g91b0g7733ddb36731" version="1">Roiling Hellfire</content>
+	<content contentuid="h8376b30fgaea1g4459g9854g5a278acde772" version="1">Flames from the heart of Avernus engulf this entity, inflicting [1] per turn.&lt;br&gt;&lt;br&gt;These flames are at their maximum intensity.</content>
+	<content contentuid="h496d8935g216eg4960g8fefg60abc213e1d7" version="1">Melting</content>
+	<content contentuid="h549d2d30g8e82g4fabgac97gd56d0f591c91" version="1">Molten lava has engulfed this entity, inflicting [1] per turn.&lt;br&gt;&lt;br&gt;These flames are at their maximum intensity.</content>
+
+	<content contentuid="h7d9260beg2e2ag4cd3ga38dg3a04663bc550" version="1">Divine flames engulf this entity, inflicting [1] per turn.&lt;br&gt;&lt;br&gt;At the beginning of this creature's turn the flames will grow hotter, ever increasing with intensity.</content>
+
+	<content contentuid="h2afe3aafg4e91g402fg8052ga688622671e9" version="1">Burning I</content>
+	<content contentuid="haec84e91gdb2ag453egbf65g4c0b592d6de6" version="1">Burning II</content>
+	<content contentuid="hba87f114gbf9eg4eaeg98d9geef26bd2cf19" version="1">Burning III</content>
+	<content contentuid="h837a803dgddc3g4ce2gaa7aga7385f41ebfb" version="1">Burning IV</content>
+	<content contentuid="h19b9050fg9fa1g4bdag94e1g165981d176d9" version="1">Burning V</content>
+	<content contentuid="h9588aedfg7c5cg492cg86c3g192f173be315" version="1">Burning VI</content>
+	<content contentuid="hc602295cg14afg42f4g8197gb0a7752e8c2a" version="1">Burning VII</content>
+	<content contentuid="h4483f94bg2f7eg4a3egb393ga7dd9e11ab2a" version="1">Burning VIII</content>
+	<content contentuid="hf715ecb9gd5d1g4abcgaa6dg8c074f750e74" version="1">Burning IX</content>
+	<content contentuid="hd68a9da9g7669g45a7ga591g3a14409c3678" version="1">Burning X</content>
+
+	<content contentuid="hfb8bd206ga8d7g4221g9ed2g820de5ea8a06" version="1">Holy Fire I</content>
+	<content contentuid="h6a27cf96gcd75g4c39gb680gb4b4ce01a18c" version="1">Holy Fire II</content>
+	<content contentuid="h4d2f88d9g46bag4898gb456g9157b0143bf5" version="1">Holy Fire III</content>
+	<content contentuid="hccb42938gc9e6g4b3fg9cfeg6545effcee55" version="1">Holy Fire IV</content>
+	<content contentuid="h288d1546g9e4bg4c5dg9f8dgeeaf83082f45" version="1">Holy Fire V</content>
+	<content contentuid="h3f3a7b6cg56b0g4767g8515g561bbad0808e" version="1">Holy Fire VI</content>
+	<content contentuid="h6b6b3084gaa15g4e6dga636ga3b44b768e7a" version="1">Holy Fire VII</content>
+	<content contentuid="h84eda58ag0893g4206gb492gdd58c312d01e" version="1">Holy Fire VIII</content>
+	<content contentuid="h17cc3ec1g83c1g4180g9b0dgd1155166b4cc" version="1">Holy Fire IX</content>
+	<content contentuid="hf8e14a22g1f38g4a88g8b4eg52b99296b823" version="1">Holy Fire X</content>
+
+	<content contentuid="h749897a1g60f5g44f4g88e6gabd38a127a15" version="1">GOON_BURNING_PASSIVE</content>
+	<content contentuid="h509ff1b0gd5e7g4cafgb053gf608cb112b94" version="1">REMOVE_GOON_BURNING</content>
+	<content contentuid="h33ab9837g7aafg4402g8f35g9fb07175a3fa" version="1">GOON_BURNING_DURATION_TECHNICAL</content>
+
+	<content contentuid="hf5c94340gc6fdg440dg8aa2ga74105b1dcde" version="1">Stop Drop and Roll</content>
+	<content contentuid="h78d4d104g4aa0g4439g92cdg29c4b8685abb" version="1">You're on fire! Smother the flames by going &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;.</content>
+	<content contentuid="he7a6617bgded9g479fgab68gfbf5fbe3df73" version="1">Stopped Dropped and Rolling</content>
+	<content contentuid="h220c4244g5d44g4fd6gbff5g241b176dd214" version="1">This creature has voluntarily gone &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt; to smother the flames.</content>
+</contentList>
