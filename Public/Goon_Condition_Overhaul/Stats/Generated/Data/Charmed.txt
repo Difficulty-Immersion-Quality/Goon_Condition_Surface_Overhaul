@@ -1,0 +1,8 @@
+// ==================================== Cutting Words ====================================
+// Changes: Now included in the Charmed status group.
+
+new entry "CUTTING_WORDS"
+type "StatusData"
+data "StatusType" "BOOST"
+using "CUTTING_WORDS"
+data "StatusGroups" "SG_Charmed"
