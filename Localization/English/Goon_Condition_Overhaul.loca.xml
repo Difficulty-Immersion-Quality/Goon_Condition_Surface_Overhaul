@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentList>
 	<!-- "BURNING" --> <content contentuid="" version="1">Takes [1] at the start of each turn, for each round of Burning on the target.</content>
+	<!-- "Shout_Overheat_Azer" --> <content contentuid="h70615a33ge8abg425ag8143g1845ab2552a1" version="1">Release a fraction of your inner fire. All nearby creatures take damage and have &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; applied for [1] turns.</content>
 	<!-- "BLEEDING" --> <content contentuid="" version="1">Takes [1] at the start of each turn, for each round of Bleeding on the target. Has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When you receive healing you must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to cure the bleeding.</content>
 	<!-- "HEAVY_BLEEDING" --> <content contentuid="habe265c7ga4abg41cag8e5egef049f4e14e1" version="1">Takes [1] at the start of each turn, for each round of Heavy Bleeding on the target. Has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Constitution &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When you receive healing you must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; to cure the bleeding.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
@@ -8,7 +9,6 @@
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "SILENCED" --> <content contentuid="ha9e39253g68cbg4f3cgbee9gb02ae743933e" version="1">Can't speak or cast spells with a verbal component.</content>
-
 	
 
 	<!-- OLD -->
