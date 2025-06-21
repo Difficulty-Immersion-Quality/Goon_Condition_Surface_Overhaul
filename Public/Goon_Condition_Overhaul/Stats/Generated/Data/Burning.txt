@@ -1,3 +1,4 @@
+// TODO: Increase the VFX intensity based on duration.
 // ==================================== Burning ====================================
 // Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
 
@@ -32,3 +33,28 @@ data "StatusPropertyFlags" "InitiateCombat;Burning;DisableOverhead;IgnoreResting
 data "OnApplyFunctors" "IF(not Tagged('TORCH') and StatusDurationLessThan(context.Target,'BURNING',2)):DealDamage(1d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',2)):DealDamage(2d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',3)):DealDamage(3d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',4)):DealDamage(4d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',5)):DealDamage(5d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',6)):DealDamage(6d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',7)):DealDamage(7d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',8)):DealDamage(8d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',9)):DealDamage(9d4,Fire);IF(not Tagged('TORCH') and Goon_StatusGroupDurationEqualTo(context.Target,'BURNING',10)):DealDamage(10d4,Fire)"
 // data "StatusGroups" "SG_Surface;SG_Light"
 // data "StatusEffect" "2156dd48-f83b-4060-9a4e-cab994da8857"
+
+// ==================================== Overheat - Burning Fiercely ====================================
+
+new entry "Shout_Overheat_Azer"
+type "SpellData"
+data "SpellType" "Shout"
+using "Shout_Overheat_Azer"
+// data "SpellSuccess" "ApplyStatus(BURNING_AZER,100,3)"
+data "SpellSuccess" "ApplyStatus(BURNING,100,4)"
+// Release a fraction of your inner fire. All nearby creatures take damage and start &lt;LSTag Type="Status" Tooltip="BURNING_AZER"&gt;Burning Fiercely&lt;/LSTag&gt;.
+// data "Description" "hcf59468fg7987g4e03g9d9dgb2d3cfedf742;2"
+// Release a fraction of your inner fire. All nearby creatures take damage and have &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; applied for [1] turns.
+data "Description" "h70615a33ge8abg425ag8143g1845ab2552a1;1"
+data "DescriptionParams" "4"
+// data "TooltipDamageList" "DealDamage(1d10,Fire)"
+data "TooltipDamageList" "DealDamage(1d12,Fire)"
+// data "TooltipStatusApply" "ApplyStatus(BURNING_AZER,100,3)"
+data "TooltipStatusApply" "ApplyStatus(BURNING,100,4)"
+
+new entry "BURNING_AZER"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "BURNING"
+using "BURNING_AZER"
+data "OnApplyConditions" "not IsImmuneToStatus('BURNING',context.Source)"
