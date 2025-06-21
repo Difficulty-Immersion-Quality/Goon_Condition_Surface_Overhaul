@@ -1,0 +1,8 @@
+// ==================================== Petrified ====================================
+
+new entry "PETRIFIED"
+type "StatusData"
+data "StatusType" "INCAPACITATED"
+using "PETRIFIED"
+// data "Boosts" "Resistance(Piercing,Resistant);Resistance(Bludgeoning,Vulnerable);Resistance(Slashing,Resistant);Resistance(Acid,Vulnerable);Resistance(Cold,Resistant);Resistance(Fire,Resistant);Resistance(Force,Resistant);Resistance(Lightning,Immune);Resistance(Necrotic,Immune);Resistance(Poison,Immune);Resistance(Psychic,Immune);Resistance(Radiant,Immune);Resistance(Thunder,Vulnerable);Attribute(Grounded);StatusImmunity(SG_Poisoned);Advantage(AttackTarget);AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);DetectDisturbancesBlock(true);Tag(BLOCK_PICKPOCKET);Tag(DOWNED_DISABLED);StatusImmunity(DISARM);DialogueBlock()"
+data "Boosts" "Resistance(Piercing,Resistant);Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Acid,Resistant);Resistance(Cold,Resistant);Resistance(Fire,Resistant);Resistance(Force,Resistant);Resistance(Lightning,Resistant);Resistance(Necrotic,Resistant);Resistance(Poison,Resistant);Resistance(Psychic,Resistant);Resistance(Radiant,Resistant);Resistance(Thunder,Resistant);Attribute(Grounded);StatusImmunity(SG_Poisoned);Advantage(AttackTarget);AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);DetectDisturbancesBlock(true);Tag(BLOCK_PICKPOCKET);Tag(DOWNED_DISABLED);StatusImmunity(DISARM);DialogueBlock()"

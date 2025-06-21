@@ -1,0 +1,12 @@
+// ==================================== Wet ====================================
+
+new entry "WET"
+type "StatusData"
+data "StatusType" "BOOST"
+using "WET"
+// Prevented from &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;. &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to Fire damage but &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to Lightning and Cold damage.
+// data "Description" "had8f6c7eg128bg42f0g9d4ag1a5c18f4b9c9;6"
+// Prevented from &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; and &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to Fire damage. Lightning and Cold &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against you.
+data "Description" "h00f17427g30c0g46acga349gcd6b4747f406;1"
+// data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Lightning, Vulnerable);Resistance(Cold, Vulnerable);Resistance(Fire, Resistant)"
+data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Fire, Resistant);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Advantage(AttackTarget);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Disadvantage(AllSavingThrows)"
