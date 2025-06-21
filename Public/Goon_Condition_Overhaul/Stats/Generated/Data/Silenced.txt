@@ -1,0 +1,33 @@
+// ==================================== Silenced ====================================
+// Changes: Modified DrKekyll's system for splitting Silenced and Deafened into pseudo status groups.
+
+new entry "SILENCED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SILENCED"
+// Can't speak or cast spells with a verbal component, and is &lt;LSTag Tooltip="Immune"&gt;Immune&lt;/LSTag&gt; to Thunder damage.
+// data "Description" "hb0820869g4747g46feg8111gb2e9ff5f5bc0;2"
+// Can't speak or cast spells with a verbal component.
+data "Description" "ha9e39253g68cbg4f3cgbee9gb02ae743933e;1"
+// data "Boosts" "BlockVerbalComponent(); Resistance(Thunder, Immune); DialogueBlock(); SoundsBlocked()"
+data "Boosts" "BlockVerbalComponent();DialogueBlock()"
+// data "OnApplyFunctors" "RemoveStatus(LURING_SONG_AURA);RemoveStatus(LURING_SONG);"
+data "OnApplyFunctors" "ApplyStatus(SG_Silenced,100,-1)"
+data "OnRemoveFunctors" "IF(not Goon_HasSilencedCondition()):RemoveStatus(SG_Silenced)"
+data "RemoveEvents" "OnApply;OnStatusRemoved"
+data "RemoveConditions" "not HasStatus('SG_Silenced')"
+
+// new entry "SHA_SILENTLIBRARY_LIBRARIANSILENCE_STATUS"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "SILENCED"
+// data "ApplyEffect" "0d1f50f9-b164-499a-9829-2ab46810597d"
+
+new entry "LOW_VoicelessPenitent_Silenced"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "SILENCED"
+using "LOW_VoicelessPenitent_Silenced"
+// data "Boosts" "BlockVerbalComponent(); Resistance(Thunder, Immune);"
+data "Boosts" "BlockVerbalComponent()"
+// data "StatusGroups" "SG_Condition;SG_DropForNonMutingDialog"
