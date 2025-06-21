@@ -7,9 +7,9 @@
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
-	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "SILENCED" --> <content contentuid="ha9e39253g68cbg4f3cgbee9gb02ae743933e" version="1">Can't speak or cast spells with a verbal component.</content>
-	
+	<!-- "DEAFENED" --> <content contentuid="h13824a4agbea7g4fd2g975fge758a07c3f68" version="1">Deafened</content>
+	<!-- "DEAFENED" --> <content contentuid="hc8e31f75g1cd9g4761gb0b0gc4c7943f58eb" version="1">Unable to hear. Automatically fail &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; that require hearing and succeed on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against effects that require you to hear them.</content>
 
 	<!-- OLD -->
 	<content contentuid="haad505a6gcbb8g4336ga884ge16bb8338ec4" version="1">Takes [1] per turn.&lt;br&gt;&lt;br&gt;At the beginning of this creature's turn the flames will grow hotter, ever increasing with intensity.</content>
