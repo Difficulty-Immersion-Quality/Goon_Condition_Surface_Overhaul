@@ -1,0 +1,22 @@
+// ============================ Deafened ============================
+
+new entry "DEAFENED"
+type "StatusData"
+data "StatusType" "BOOST"
+data "Icon" "Status_Deaf"
+// Deafened
+data "DisplayName" "h13824a4agbea7g4fd2g975fge758a07c3f68;1"
+// Unable to hear. Automatically fail &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; that require hearing and succeed on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against effects that require you to hear them.
+data "Description" "hc8e31f75g1cd9g4761gb0b0gc4c7943f58eb;1"
+data "StackId" "DEAFENED"
+data "StackType" "Overwrite"
+data "StackPriority" "1"
+data "StatusPropertyFlags" "InitiateCombat;IgnoreResting;ApplyToDead"
+data "Boosts" "StatusImmunity(LURING_SONG)"
+data "OnApplyFunctors" "RemoveStatus(LURING_SONG)"
+data "RemoveEvents" "OnApply;OnStatusRemoved"
+data "RemoveConditions" "not Goon_HasDeafenedCondition()"
+data "StatusGroups" "SG_Condition"
+data "StatusEffect" "c30d22f0-947b-472c-9b7d-f2a062abf9a1"
+data "ManagedStatusEffectType" "Negative"
+data "ManagedStatusEffectGroup" "6435c10a-c67d-4f79-8813-b84b0762f92b"
