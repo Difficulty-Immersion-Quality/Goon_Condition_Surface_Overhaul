@@ -1,3 +1,21 @@
+// ==================================== Barbed Arrow: Barbed Bodkin - Ruptured ====================================
+
+new entry "BARBED_ARROW"
+type "StatusData"
+data "StatusType" "BOOST"
+using "BARBED_ARROW"
+// Ruptured
+// data "DisplayName" "h2f645568g92b7g4fdaga615g645f9491c9e0;3"
+// Take [1] damage when moving. Each time you move, reduce the condition duration by [2].
+// data "Description" "h88dababfg00beg45e5gbf94g6f71c3367a9b;5"
+// data "DescriptionParams" "DealDamage(1d4, Piercing);1"
+// data "Icon" "Status_Bleeding"
+data "OnApplyConditions" "not IsImmuneToStatus('BLEEDING',context.Source)"
+// data "StackId" "BARBED_ARROW"
+// data "Passives" "BarbedArrow_Passive"
+// data "ManagedStatusEffectType" "Negative"
+// data "ManagedStatusEffectGroup" "6435c10a-c67d-4f79-8813-b84b0762f92b"
+
 // ==================================== Bleeding ====================================
 // Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
 // Includes native support for Arsenal Overhaul's "Heavy Bleeding" condition, increasing its damage from a flat 4 to 1d6 with the same scaling as Bleeding.
@@ -32,8 +50,9 @@ data "TickFunctors" "AI_ONLY:DealDamage(1d4,Slashing);IF(StatusDurationLessThan(
 // data "StatusGroups" "SG_Condition"
 data "Passives" "Goon_Bleeding_Removal"
 
-// Arsenal Overhaul
+// ==================================== Heavy Bleeding (Arsenal Overhaul) ====================================
 // TODO: Confirm: When overwriting Bleeding it should adjust the duration to match the previous Bleeding duration + the Heavy Bleeding application.
+
 new entry "HEAVY_BLEEDING"
 type "StatusData"
 data "StatusType" "BOOST"
@@ -47,6 +66,7 @@ data "Description" "habe265c7ga4abg41cag8e5egef049f4e14e1;1"
 // data "DescriptionParams" "DealDamage(4,Slashing);"
 data "DescriptionParams" "DealDamage(1d6,Slashing)"
 // data "Icon" "Status_Bleeding"
+data "OnApplyConditions" "not IsImmuneToStatus('BLEEDING',context.Source)"
 // data "StackId" "HEAVY_BLEEDING"
 data "StackId" "BLEEDING"
 data "StackPriority" "2"
