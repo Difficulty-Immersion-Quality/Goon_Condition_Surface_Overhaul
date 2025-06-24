@@ -1,12 +1,36 @@
 // ==================================== Wet ====================================
+// Changes: No longer provieds Vulnerability to Lightning and Cold. Now incoming Lightning and Cold damage attacks have Advantage, and the Wet target has Disadvantage on all the associated Saving Throws.
+// Changes: Application is now shown in the combat log.
+// Changes: Condition is now "Additive", applications of the status are cumulitive for its duration, currently no additional effects based on duration.
 
 new entry "WET"
 type "StatusData"
 data "StatusType" "BOOST"
 using "WET"
+// Wet
+// data "DisplayName" "h5cd8c5eag6a04g43a7g8ff2g5e97ca0200f0;1"
 // Prevented from &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;. &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to Fire damage but &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to Lightning and Cold damage.
 // data "Description" "had8f6c7eg128bg42f0g9d4ag1a5c18f4b9c9;6"
-// Prevented from &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; and &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to Fire damage. Lightning and Cold &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against you.
-data "Description" "h00f17427g30c0g46acga349gcd6b4747f406;1"
+// Prevented from &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; and &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to [1]. &lt;LSTag Tooltip="AttackRoll"&gt;Attacks&lt;/LSTag&gt; dealing [2] and [3] have &lt;LSTag Tooltip="Advantage"&gt;Advantage&lt;/LSTag&gt; against Wet targets, and the target has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against their effects.
+data "Description" "h6788aa6fg1c29g4313g9609ge1b8b7fe28ec;1"
+// data "Icon" "Status_Wet"
+// data "FormatColor" "Water"
+// data "MaterialType" "FadingOverlay"
+// data "MaterialApplyBody" "Yes"
+// data "MaterialApplyArmor" "Yes"
+// data "MaterialApplyWeapon" "Yes"
+// data "MaterialApplyNormalMap" "Yes"
+// data "MaterialFadeAmount" "3000"
+// data "StackId" "WET"
+data "StackType" "Additive"
+// data "StackPriority" "10"
 // data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Lightning, Vulnerable);Resistance(Cold, Vulnerable);Resistance(Fire, Resistant)"
 data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Fire, Resistant);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Advantage(AttackTarget);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Disadvantage(AllSavingThrows)"
+// data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
+data "StatusPropertyFlags" "DisableOverhead"
+// data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Invisible);RemoveStatus(SG_Sleeping);"
+// data "StatusGroups" "SG_Surface"
+// data "StatusEffect" "33b6ed26-a3d2-46ac-a5ba-932637344771"
+// data "SplatterDirtAmount" "-2"
+// data "SplatterBloodAmount" "-2"
+// data "SplatterSweatAmount" "-2"
