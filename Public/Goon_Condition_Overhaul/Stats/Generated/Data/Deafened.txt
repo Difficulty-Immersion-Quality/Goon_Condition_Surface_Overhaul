@@ -1,4 +1,5 @@
 // ============================ Deafened ============================
+// Custom condition.
 
 new entry "DEAFENED"
 type "StatusData"
