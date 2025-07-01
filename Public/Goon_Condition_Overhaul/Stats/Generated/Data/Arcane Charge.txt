@@ -9,10 +9,10 @@ using "MAG_GISH_ARCANE_CHARGE"
 // data "DisplayName" "h2b4b1619g0580g4ba2g9c7bg6c81cac40be5;4"
 // While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a +[1] bonus to damage with spells.
 // data "Description" "h8b3ddcacge2d8g41e0ga7eegb3cefedd8678;15"
-// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity gains their &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt; of [1] to damage with spells.
-// data "Description" "h8b3ddcacge2d8g41e0ga7eegb3cefedd8678;15"
+// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a bonus to damage with spells equal to their&lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+data "Description" "he2b56349ge1bag4d8ag95a9gf046e3867c92;1"
 // data "DescriptionParams" "2"
-data "DescriptionParams" "ProficiencyBonus"
+data "DescriptionParams" ""
 // data "Icon" "statIcons_GishArcaneCharge"
 // data "SoundLoop" "MAG_Status_Boost_Gish_ArcaneCharge_MO"
 // data "SoundStop" "MAG_Status_Boost_Gish_ArcaneCharge_MO_Stop"
@@ -20,3 +20,19 @@ data "DescriptionParams" "ProficiencyBonus"
 // data "Boosts" "IF(HasStatus('FLANKED') and IsSpell()):DamageBonus(2)"
 data "Boosts" "IF(HasStatus('FLANKED') and IsSpell()):DamageBonus(ProficiencyBonus)"
 // data "StatusEffect" "4425d0c5-277f-4714-bcdd-b2e97eb615ec"
+
+// Larian's use of inheritence makes me wanna rip pee pee off, but the below is fine.
+
+// new entry "MAG_MAGIC_ITEM_POWERED_CAST"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_GISH_ARCANE_CHARGE"
+// Arcane Battery
+// data "DisplayName" "h9815c42fg971eg4450g891bg508b7c71c4ca;2"
+// Affected entity's next spell doesn't cost a <LSTag Tooltip="SpellSlot">spell slot</LSTag> in order to cast. 
+// data "Description" "he1538d27gf1f6g4b28gb68bgef765a93da2d;2"
+// data "Icon" "PassiveFeature_ArcaneBattery"
+// data "StackId" "MAG_MAGIC_ITEM_POWERED_CAST"
+// data "TickType" ""
+// data "Boosts" "UnlockSpellVariant(MagicItemPoweredSpellCheck(),ModifyIconGlow(),ModifyTooltipDescription(),ModifyUseCosts(Replace,SpellSlot,0,-1,SpellSlot),ModifyUseCosts(Replace,WarlockSpellSlot,0,-1,WarlockSpellSlot),ModifyUseCosts(Replace,SpellSlotsGroup,0,-1,SpellSlotsGroup))"
+// data "StatusPropertyFlags" ""

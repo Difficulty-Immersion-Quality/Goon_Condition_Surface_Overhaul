@@ -14,7 +14,7 @@
 	<!-- "DEAFENED" --> <content contentuid="h13824a4agbea7g4fd2g975fge758a07c3f68" version="1">Deafened</content>
 	<!-- "DEAFENED" --> <content contentuid="hc8e31f75g1cd9g4761gb0b0gc4c7943f58eb" version="1">Unable to hear. Automatically fail &lt;LSTag Tooltip="AbilityCheck"&gt;Ability Checks&lt;/LSTag&gt; that require hearing and succeed on &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt; against effects that require you to hear them.</content>
 
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_GISH_ARCANE_CHARGE" --> <content contentuid="he2b56349ge1bag4d8ag95a9gf046e3867c92" version="1">While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a bonus to damage with spells equal to their&lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
