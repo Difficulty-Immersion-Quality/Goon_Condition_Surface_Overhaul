@@ -1,6 +1,9 @@
-// new entry "MAG_FROST"
-// type "StatusData"
-// data "StatusType" "BOOST"
+// ==================================== Encrusted with Frost ====================================
+
+new entry "MAG_FROST"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_FROST"
 // Encrusted with Frost
 // data "DisplayName" "h473dd343g566cg470cg9307g326ae34d7551;2"
 // Affected entity has <LSTag Tooltip="Disadvantage">Disadvantage</LSTag> on Dexterity <LSTag Tooltip="SavingThrow">Saving Throws</LSTag>.<br><br>When there are [1] or more turns remaining, the entity must succeed a Constitution Saving Throw or take [2] and become <LSTag Type="Status" Tooltip="FROZEN">Frozen</LSTag>. On a successful save, it only takes half damage. Afterward, the frost sloughs away.<br><br>Removed by <LSTag Type="Status" Tooltip="BURNING">Burning</LSTag>.
@@ -18,4 +21,24 @@
 // data "RemoveEvents" "OnStatusApplied"
 // data "TooltipSave" "Constitution"
 // data "OnApplyFunctors" "IF(HasStatus('BURNING')):RemoveStatus(MAG_FROST)"
+data "OnApplyFunctors" ""
+data "OnApplyConditions" "not HasStatus('BURNING')"
 // data "StatusEffect" "ad70c67d-f4f6-4dea-b6b6-d871fae6ddc1"
+
+// new entry "MAG_FROST_FROZEN_CHECK_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_FROST"
+// data "StackId" "MAG_FROST_FROZEN_CHECK_TECHNICAL"
+// data "StackType" "Overwrite"
+// data "TickType" ""
+// data "Boosts" ""
+// data "RemoveConditions" ""
+// data "RemoveEvents" ""
+// data "TooltipSave" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+// data "OnApplyFunctors" "RemoveStatus(MAG_FROST)"
+// data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 12) "
+// data "OnApplySuccess" "ApplyStatus(FROZEN, 100, 2)"
+// data "OnApplyFail" "DealDamage(1d4, Cold,Magical)"
+// data "StatusEffect" ""
