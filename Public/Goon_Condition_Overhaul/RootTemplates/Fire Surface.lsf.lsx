@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="7" revision="1" build="3" lslib_meta="v1,bswap_guids,lsf_keys_adjacency" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+				<node id="GameObjects">
+					<attribute id="CameraOffset" type="fvec3" value="0 0 0" />
+					<attribute id="DecalMaterial" type="FixedString" value="e718b92b-5dac-d873-732d-e79124b795cf" />
+					<attribute id="DefaultLifeTime" type="float" value="12" />
+					<attribute id="Description" type="TranslatedString" handle="h99d294b8g2508g49b4g92a4g214b958fa5b7" version="1" />
+					<attribute id="DisplayName" type="TranslatedString" handle="h4dc16cf9g5ab0g44a5g95b4gb41bda9105be" version="1" />
+					<attribute id="EnableLightSpawning" type="bool" value="True" />
+					<attribute id="FadeOutSpeed" type="float" value="0.5" />
+					<attribute id="Flag" type="int32" value="0" />
+					<attribute id="GroupID" type="uint32" value="0" />
+					<attribute id="HasGameplayValue" type="bool" value="False" />
+					<attribute id="Icon" type="FixedString" value="Surface_Fire" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="9ce17ac5-a7c9-431f-ae41-3a572d5fc302" />
+					<attribute id="MaterialType" type="uint8" value="35" />
+					<attribute id="Name" type="LSString" value="SurfaceFire" />
+					<attribute id="ObscuredStateOverride" type="uint8" value="1" />
+					<attribute id="ParentTemplateId" type="FixedString" value="" />
+					<attribute id="PhysicsOpenTemplate" type="FixedString" value="" />
+					<attribute id="PhysicsTemplate" type="FixedString" value="" />
+					<attribute id="RollConditions" type="LSString" value="not Tagged('POTION')" />
+					<attribute id="SpawnLightRandomVerticalRangeOffset" type="fvec2" value="0.01 0.1" />
+					<attribute id="SpawnLightTemplateID" type="FixedString" value="9ff342d2-3782-4ced-9ab4-dfa84211c617" />
+					<attribute id="SurfaceCategory" type="uint8" value="8" />
+					<attribute id="Type" type="FixedString" value="surface" />
+					<attribute id="VisualTemplate" type="FixedString" value="" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144255925564211200" />
+					<children>
+						<!-- <node id="FX" /> -->
+						<node id="InstanceVisual">
+							<children>
+								<node id="InstanceVisual">
+									<attribute id="GridSize" type="float" value="1" />
+									<attribute id="Height" type="fvec2" value="0 0.1" />
+									<attribute id="RandomPlacement" type="float" value="1" />
+									<attribute id="Rotation" type="ivec2" value="0 0" />
+									<attribute id="Scale" type="fvec2" value="1.25 2" />
+									<attribute id="SpawnCell" type="int32" value="4" />
+									<attribute id="SurfaceNeeded" type="float" value="0.7" />
+									<attribute id="SurfaceRadiusMax" type="float" value="0" />
+									<attribute id="Visual" type="FixedString" value="be7d5a5a-c4af-2819-3a14-b8502df77ad2" />
+								</node>
+								<node id="InstanceVisual">
+									<attribute id="GridSize" type="float" value="1" />
+									<attribute id="Height" type="fvec2" value="-0.3 -0.1" />
+									<attribute id="RandomPlacement" type="float" value="30" />
+									<attribute id="Rotation" type="ivec2" value="0 0" />
+									<attribute id="Scale" type="fvec2" value="1.5 2.5" />
+									<attribute id="SpawnCell" type="int32" value="2" />
+									<attribute id="SurfaceNeeded" type="float" value="0.7" />
+									<attribute id="SurfaceRadiusMax" type="float" value="0" />
+									<attribute id="Visual" type="FixedString" value="3bd226ad-3f81-dbad-6230-eb53b31e487f" />
+								</node>
+							</children>
+						</node>
+						<node id="IntroFX" />
+						<!-- Extra VFX start -->
+						<node id="FX">
+							<children>
+								<node id="FX">
+									<attribute id="GridSize" type="float" value="10" />
+									<attribute id="Height" type="fvec2" value="0 0" />
+									<attribute id="RandomPlacement" type="float" value="10" />
+									<attribute id="Rotation" type="ivec2" value="0 0" />
+									<attribute id="Scale" type="fvec2" value="1.0 2.0" />
+									<attribute id="SpawnCell" type="int32" value="50" />
+									<attribute id="SurfaceNeeded" type="float" value="0" />
+									<attribute id="SurfaceRadiusMax" type="float" value="0" />
+									<!-- VFX_Environment_Menu_Fire_03 -->
+									<attribute id="Visual" type="FixedString" value="84c1330d-d96e-c002-c69b-d56ee28b213f" />
+								</node>
+							</children>
+						</node>
+						<!-- Extra VFX end -->
+						<node id="StatusData">
+							<children>
+								<node id="StatusData">
+									<attribute id="AffectedByRoll" type="bool" value="True" />
+									<attribute id="ApplyToCharacters" type="bool" value="True" />
+									<attribute id="ApplyToItems" type="bool" value="True" />
+									<attribute id="ApplyTypes" type="uint8" value="11" />
+									<attribute id="Chance" type="float" value="1" />
+									<attribute id="DontTickWhileOnSurface" type="bool" value="True" />
+									<attribute id="Duration" type="float" value="6" />
+									<attribute id="Force" type="bool" value="False" />
+									<attribute id="KeepAlive" type="bool" value="False" />
+									<attribute id="OnlyOncePerTurn" type="bool" value="False" />
+									<attribute id="Remove" type="bool" value="False" />
+									<attribute id="StatusId" type="FixedString" value="BURNING" />
+									<attribute id="VanishOnApply" type="bool" value="False" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>
