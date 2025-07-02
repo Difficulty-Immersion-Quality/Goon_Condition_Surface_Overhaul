@@ -1,6 +1,0 @@
--- Added some additional tags
-function UndeadOrFiend(target)
-    target = target or context.Target
-
-    return Tagged('UNDEAD', target) | Tagged('FIEND', target) | Tagged('UNDEAD_BEAST', target) | Tagged('SHADOW', target)
-end
