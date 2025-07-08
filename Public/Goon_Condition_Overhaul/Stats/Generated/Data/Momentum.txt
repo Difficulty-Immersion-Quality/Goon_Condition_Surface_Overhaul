@@ -1,0 +1,22 @@
+// ==================================== Momentum ====================================
+// TODO: Past me wanted to do something with this.
+
+// new entry "MAG_MOMENTUM"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// Momentum
+// data "DisplayName" "h2d9bbf02gea79g4197g9efegcb2615a3e82e;2"
+// Spurred on by a sense of urgency. The affected entity's &lt;LSTag Tooltip="MovementSpeed"&gt;movement speed&lt;/LSTag&gt; has increased by [1] per remaining duration of this effect.&lt;br&gt;&lt;br&gt;Removed when &lt;LSTag Type="Status" Tooltip="RESTRAINED"&gt;Restrained&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;Incapacitated&lt;/LSTag&gt;, &lt;LSTag Type="Status" Tooltip="PRONE"&gt;Prone&lt;/LSTag&gt;, or slowed down.
+// data "Description" "ha617de62g5c63g4e40g97a1gfae866256960;5"
+// data "DescriptionParams" "Distance(1.5)"
+// data "Icon" "statIcons_Momentum"
+// data "SoundLoop" "Spell_Status_Dash_MO"
+// data "StackId" "MAG_MOMENTUM"
+// data "StackType" "Additive"
+// data "TickType" "EndTurn"
+// data "Boosts" "ActionResource(Movement, 1.5, 0)"
+// data "RemoveConditions" "StatusHasStatusGroup(SG_Incapacitated) or StatusHasStatusGroup(SG_Unconscious) or StatusHasStatusGroup(SG_Prone) or StatusHasStatusGroup(SG_Restrained) or HasStatus('SLOW')"
+// data "StatusPropertyFlags" "MultiplyEffectsByDuration"
+// data "OnApplyFunctors" "IF(MaximumHighStackableStatus(context.Source, 'MAG_MOMENTUM')):SetStatusDuration(MAG_MOMENTUM, 7, ForceSet) "
+// data "ApplyEffect" "c8f93b82-29e0-44ab-af10-d4284d67974b"
+// data "StatusEffect" "ff3b9074-38e8-4639-831a-af078ada9205"
