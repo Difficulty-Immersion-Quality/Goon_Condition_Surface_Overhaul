@@ -1,5 +1,6 @@
 // ==================================== Acid ====================================
 // Bug Fix: Now ignores resting like other conditions.
+// TODO: Scaling AC reduction, at a certain threshold have it do damage.
 
 new entry "ACID"
 type "StatusData"
