@@ -1,6 +1,5 @@
-// TODO: Increase the VFX intensity based on duration.
 // ==================================== Burning ====================================
-// Changes: Now uses an "Additive" "StackType". Meaning subsuquent applications of the condition will increase the duration.
+// Changes: Now stacks additively, subsequent applications increase duration.
 // Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
 
 new entry "BURNING"
@@ -37,6 +36,8 @@ data "OnApplyFunctors" "IF(not Tagged('TORCH') and StatusDurationLessThan(contex
 // data "StatusEffect" "2156dd48-f83b-4060-9a4e-cab994da8857"
 
 // ==================================== Overheat - Burning Fiercely ====================================
+// Changes: Azer Warhammer's Overheat no longer applies its own condition Burning Fierily, it instead applies Burning for a duration of 4 rounds.
+// Changes: Will no longer apply to entities that are Immune to Burning.
 
 new entry "Shout_Overheat_Azer"
 type "SpellData"
@@ -69,6 +70,10 @@ data "OnApplyConditions" "not IsImmuneToStatus('SG_Burning',context.Source) and 
 // data "StatusEffect" "2156dd48-f83b-4060-9a4e-cab994da8857"
 
 // ==================================== Holy Fire ====================================
+// Changes: Now stacks additively, subsequent applications increase duration.
+// Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
+// Changes: Instead of dealing an additional 1d4 to Fiends and Undead, the die is instead increased from 1d4 to 1d6.
+// Changes: Will no longer apply to entities that are Immune to Burning.
 
 new entry "BURNING_HOLY"
 type "StatusData"
@@ -96,6 +101,8 @@ data "OnApplyFunctors" "IF(not Tagged('TORCH') and not UndeadOrFiend() and Statu
 // data "StatusEffect" "9055845d-c778-44ba-a671-b0a112bacf61"
 
 // ==================================== Melting ====================================
+// Changes: Will no longer apply to entities that are Immune to Burning.
+// Changes: When Melting is removed from a character, Burning is applied for a duration of 9 rounds.
 
 new entry "BURNING_LAVA"
 type "StatusData"
@@ -118,7 +125,9 @@ data "StatusPropertyFlags" "Burning"
 data "OnRemoveFunctors" "ApplyStatus(BURNING,100,9)"
 
 // ==================================== Roiling Hellfire ====================================
-// Bug Fix: Now ignores resistance to Fire damage.
+// Bug Fix: Now ignores Resistance to Fire damage.
+// Changes: Now stacks additively, subsequent applications increase duration.
+// Changes: Will no longer apply to entities that are Immune to Burning.
 
 new entry "BURNING_HELLFIRE"
 type "StatusData"
