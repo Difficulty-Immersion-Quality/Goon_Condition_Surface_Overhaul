@@ -9,7 +9,7 @@ using "MAG_GISH_ARCANE_CHARGE"
 // data "DisplayName" "h2b4b1619g0580g4ba2g9c7bg6c81cac40be5;4"
 // While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a +[1] bonus to damage with spells.
 // data "Description" "h8b3ddcacge2d8g41e0ga7eegb3cefedd8678;15"
-// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a bonus to damage with spells equal to their&lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
+// While &lt;LSTag Type="Status" Tooltip="THREATENED"&gt;Threatened&lt;/LSTag&gt;, affected entity has a bonus to damage with spells equal to their &lt;LSTag Tooltip="ProficiencyBonus"&gt;Proficiency Bonus&lt;/LSTag&gt;.
 data "Description" "he2b56349ge1bag4d8ag95a9gf046e3867c92;1"
 // data "DescriptionParams" "2"
 data "DescriptionParams" ""
