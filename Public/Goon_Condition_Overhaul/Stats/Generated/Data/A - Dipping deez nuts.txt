@@ -1,6 +1,6 @@
 // Changes: A much wider array of surfaces and objects that are on fire can be used to dip weapons. This includes Karlach prior to getting her engine cooled, or whenever she uses a Soul Coin.
 // TODO: Make Wet a thing for weapons, and all that other stuff floating around in my head.
-// TODO: Dipping in Hellfire and Holy Fire, all that stuff, different dipp effects etc.
+// TODO: Dipping in Hellfire and Holy Fire, all that stuff, different dip effects etc.
 
 // ==================================== Dipping ====================================
 // Changes: Everything that is fire is dippable as if it was fire, including Karlach kekw.
