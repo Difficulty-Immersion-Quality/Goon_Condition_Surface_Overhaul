@@ -1,5 +1,5 @@
 // ==================================== Bane ====================================
-// Changes: Now uses an "Additive" "StackType". Meaning subsuquent applications of the condition will increase the duration.
+// Changes: Now stacks additively, subsequent applications increase duration.
 
 new entry "BANE"
 type "StatusData"
