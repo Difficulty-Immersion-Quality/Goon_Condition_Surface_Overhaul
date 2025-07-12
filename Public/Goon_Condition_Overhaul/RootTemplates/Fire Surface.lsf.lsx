@@ -39,7 +39,7 @@
 									<attribute id="GridSize" type="float" value="1" />
 									<attribute id="Height" type="fvec2" value="0 0.1" />
 									<attribute id="RandomPlacement" type="float" value="1" />
-									<attribute id="Rotation" type="ivec2" value="0 0" />
+									<attribute id="Rotation" type="ivec2" value="0 360" />
 									<attribute id="Scale" type="fvec2" value="1.25 2" />
 									<attribute id="SpawnCell" type="int32" value="4" />
 									<attribute id="SurfaceNeeded" type="float" value="0.7" />
