@@ -1,6 +1,8 @@
 // ==================================== Silenced (Vanilla) ====================================
-// Changes: Modified DrKekyll's system for splitting Silenced and Deafened into pseudo status groups.
+// Changes: Now stacks additively, subsequent applications increase duration.
+// TODO: Modified DrKekyll's system for splitting Silenced and Deafened into distinct conditions across the game. (This is a pretty large scale undertaking, so it's not fully implemented until I can properly implement it across my mods and what not.)
 
+// Changes: Silenced conditions will no longer apply to entities that are immune to the base Silenced condition.
 // TODO: Replace description to fit the split.
 // Can't speak or cast spells with a verbal component.
 // data "Description" "ha9e39253g68cbg4f3cgbee9gb02ae743933e;1"
@@ -16,7 +18,7 @@ using "SILENCED"
 // data "Icon" "Spell_Illusion_Silence"
 // data "SoundStart" "Misc_Status_Silence_Gameobject_Mute"
 // data "SoundStop" "Misc_Status_Silence_Gameobject_Unmute"
-data "StackType" "Overwrite"
+data "StackType" "Additive"
 // data "StackId" "SILENCED"
 // data "StackPriority" "1"
 data "OnApplyConditions" "not IsImmuneToStatus('SG_Silenced',context.Source)"
