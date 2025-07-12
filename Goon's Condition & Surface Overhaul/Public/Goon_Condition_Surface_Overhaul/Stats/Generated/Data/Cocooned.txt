@@ -1,0 +1,33 @@
+// ==================================== Beast Master - Wolf Spider Companion's Cocooned Condition ====================================
+// Bug Fix: The condition's Strength Saving Throw from Aranea Major and Aranea Aculeata's Cocoon spell now scales by using SourceSpellDC, same as the initial Saving Throw against the spell itself. (Note: Also found in Goon's Ranger Overhaul)
+// Changes: Now stacks additively, subsequent applications increase duration.
+
+new entry "ENTOMBED"
+type "StatusData"
+data "StatusType" "INCAPACITATED"
+// using "PETRIFIED"
+using "ENTOMBED"
+// Cocooned
+// data "DisplayName" "h9b4059cdg4b17g419egbe15gdeef6902d857;2"
+// Trapped in a spider's web. Can't move or take actions, bonus actions, or reactions.&lt;br&gt;&lt;br&gt;The condition ends upon taking damage.
+// data "Description" "hd01118f6g0560g43f1g90e7g616cddc499c8;2"
+// Trapped in a spider's web. Can't move or take &lt;LSTag Tooltip="Action"&gt;Actions&lt;/LSTag&gt;, &lt;LSTag Tooltip="BonusAction"&gt;Bonus Actions&lt;/LSTag&gt;, or &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The condition ends upon taking damage.
+data "Description" "h2baf4d23g8e9ag44feg8b26ga6e3e896724b;1"
+// data "Icon" "Action_Spider_Entomb"
+// data "FormatColor" ""
+// data "AnimationStart" "4c6636ea-1496-4072-83cc-f2bed762b103(STAT_Snare_Combat_01_Start)"
+// data "AnimationLoop" "0f46a165-c4a4-4123-8bcf-9cd0b96bae1a(STAT_Snare_Combat_01_Loop)"
+// data "AnimationEnd" "c6596d70-68b6-4174-8303-d7fa398d8f7a(STAT_Snare_Combat_01_End)"
+// data "StillAnimationPriority" "Snared"
+// data "StackId" "ENTOMBED"
+data "StackType" "Additive"
+data "StackPriority" "1"
+// data "FreezeTime" ""
+// data "Boosts" "Resistance(Piercing,Resistant);Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Acid,Resistant);Resistance(Cold,Resistant);Resistance(Fire,Resistant);Resistance(Force,Resistant);Resistance(Lightning,Resistant);Resistance(Necrotic,Resistant);Resistance(Poison,Resistant);Resistance(Psychic,Resistant);Resistance(Radiant,Resistant);Resistance(Thunder,Resistant);Attribute(Grounded);StatusImmunity(SG_Poisoned);Advantage(AttackTarget);Disadvantage(SavingThrow,Strength);AbilityFailedSavingThrow(Dexterity);DetectDisturbancesBlock(true);"
+// data "TooltipSave" "Strength"
+// data "StatusPropertyFlags" "InitiateCombat"
+// data "RemoveEvents" "OnDamage"
+// data "OnTickRoll" "not SavingThrow(Ability.Strength,12)"
+data "OnTickRoll" "not SavingThrow(Ability.Strength,SourceSpellDC())"
+// data "OnTickFail" "RemoveStatus(ENTOMBED)"
+// data "StatusEffect" "e42a30ba-b2b7-4038-a85b-fadeb9a869ef"
