@@ -1,15 +1,17 @@
 // ==================================== Chilled ====================================
 // Bug Fix: Now ignores resting like other conditions.
-// Bug Fix: Application is now visible on character overheads and the combat log.
+// Bug Fix: Application and removal is now visible on overheads and in the combat log.
+// Changes: Now stacks additively, subsequent applications increase duration.
 
 new entry "CHILLED"
 type "StatusData"
 data "StatusType" "BOOST"
 using "CHILLED"
-// // Chilled
+// Chilled
 // data "DisplayName" "h98420645g4a1fg4fbagb2dbga9290f2bd7f3;1"
-// // Affected entity is <LSTag Tooltip="Vulnerable">Vulnerable</LSTag> to Cold damage and <LSTag Tooltip="Resistant">Resistant</LSTag> to Fire damage.
+// Affected entity is &lt;LSTag Tooltip="Vulnerable"&gt;Vulnerable&lt;/LSTag&gt; to[1] and &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to[2].
 // data "Description" "h6fd44e80g60f8g4ce9gb8f4g52bdaf6f8b3f;3"
+data "DescriptionParams" "DealDamage(,Cold);DealDamage(,Fire)"
 // data "Icon" "Status_Chilled"
 // data "FormatColor" "Water"
 // data "MaterialType" "FadingOverlay"
@@ -19,7 +21,128 @@ using "CHILLED"
 // data "MaterialApplyNormalMap" "Yes"
 // data "MaterialFadeAmount" "3000"
 // data "StackId" "CHILLED"
+data "StackType" "Additive"
+data "StackPriority" "1"
 // data "Boosts" "Resistance(Fire, Resistant);Resistance(Cold, Vulnerable)"
 // data "StatusPropertyFlags" "InitiateCombat;DisableCombatlog;DisableOverhead"
 data "StatusPropertyFlags" "InitiateCombat;IgnoreResting"
 // data "StatusGroups" "SG_Surface"
+
+// ==================================== Encrusted with Frost ====================================
+// Bug Fix: Now all Burning conditions remove this condition, not just the base Burning condition.
+// TODO: Damage based on duration, increasing by 1d4 for each round left on the target up to a maximum of 9d4 for 9+ rounds.
+
+new entry "MAG_FROST"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_FROST"
+// Encrusted with Frost
+// data "DisplayName" "h473dd343g566cg470cg9307g326ae34d7551;2"
+// Affected entity has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on Dexterity &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When there are [1] or more turns remaining, the entity must succeed a Constitution Saving Throw or take [2] and become &lt;LSTag Type="Status" Tooltip="FROZEN"&gt;Frozen&lt;/LSTag&gt;. On a successful save, it only takes half damage. Afterward, the frost sloughs away.&lt;br&gt;&lt;br&gt;Removed by &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;.
+// data "Description" "h7c465498g8068g4ebdga890gdd76e22fa263;14"
+// Affected entity has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When there are [1] or more turns remaining, the entity must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; Saving Throw or become &lt;LSTag Type="Status" Tooltip="FROZEN"&gt;Frozen&lt;/LSTag&gt;. On a successful save, take [2]. Afterward, the frost sloughs away.&lt;br&gt;&lt;br&gt;Removed by &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;.
+data "Description" "h493e0851gdef1g4ac7gabf2g3b4eca27a671;1"
+// data "DescriptionParams" "7;DealDamage(1d4, Cold)"
+// data "Icon" "statIcons_Frost"
+// data "SoundLoop" "Misc_Status_Frost_MO"
+// data "SoundStop" "Misc_Status_Frost_MO_Stop"
+// data "StackId" "MAG_FROST"
+// data "StackType" "Additive"
+// data "TickType" "StartTurn"
+// data "Boosts" "Disadvantage(SavingThrow, Dexterity)"
+// data "Passives" "MAG_Frost_Passive"
+// data "RemoveConditions" "StatusId('BURNING')"
+data "RemoveConditions" "StatusId('SG_Burning')"
+// data "RemoveEvents" "OnStatusApplied"
+// data "TooltipSave" "Constitution"
+// data "OnApplyFunctors" "IF(HasStatus('BURNING')):RemoveStatus(MAG_FROST)"
+data "OnApplyFunctors" ""
+data "OnApplyConditions" "not HasStatus('SG_Burning')"
+// data "StatusEffect" "ad70c67d-f4f6-4dea-b6b6-d871fae6ddc1"
+
+// new entry "MAG_Frost_Passive"
+// type "PassiveData"
+// Encrusted with Frost
+// data "DisplayName" "h01290041g786fg4203g8260g6e4d48f11e36;2"
+// data "Properties" "IsHidden;OncePerAttack"
+// data "StatsFunctorContext" "OnStatusApplied"
+// data "StatsFunctors" "IF(FrostCounterRequirement() and not HasStatus('MAG_FROST_ONCE_TECHNICAL', context.Target)):ApplyStatus(MAG_FROST_FROZEN_CHECK_TECHNICAL,100, 1);IF(FrostCounterRequirement()):ApplyStatus(MAG_FROST_ONCE_TECHNICAL, 100, 0);IF(FrostCounterRequirement(context.Target)):RemoveStatus(MAG_FROST, context.Target)"
+
+// new entry "MAG_FROST_FROZEN_CHECK_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_FROST"
+// data "StackId" "MAG_FROST_FROZEN_CHECK_TECHNICAL"
+// data "StackType" "Overwrite"
+// data "TickType" ""
+// data "Boosts" ""
+// data "RemoveConditions" ""
+// data "RemoveEvents" ""
+// data "TooltipSave" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+// data "OnApplyFunctors" "RemoveStatus(MAG_FROST)"
+// data "OnApplyRoll" "not SavingThrow(Ability.Constitution, 12)"
+// data "OnApplySuccess" "ApplyStatus(FROZEN, 100, 2)"
+// data "OnApplyFail" "DealDamage(1d4, Cold,Magical)"
+// data "StatusEffect" ""
+
+// new entry "MAG_FROST_ONCE_TECHNICAL"
+// type "StatusData"
+// data "StatusType" "BOOST"
+// using "MAG_FROST"
+// data "SoundLoop" ""
+// data "SoundStop" ""
+// data "StackId" "MAG_FROST_ONCE_TECHNICAL"
+// data "StackType" ""
+// data "TickType" ""
+// data "Boosts" ""
+// data "Passives" ""
+// data "RemoveConditions" ""
+// data "RemoveEvents" ""
+// data "TooltipSave" ""
+// data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+// data "OnApplyFunctors" ""
+// data "StatusEffect" ""
+
+// ==================================== Frozen ====================================
+// Bug Fix: The duration will tick at the end of the entity's turn instead of the start, preventing it from being removed prior to the incapacitation ever being an inconvenience when only applied for 1 turn.
+// Bug Fix: The entity now automatically fails Strength and Dexterity Saving Throws, and attackers have Advantage against them, same as other Incapacitation conditions.
+// Changes: Added Vulnerability to Cold damage to match Chilled. Frozen should not reduce effects when it's the escalation in a series of conditions.
+
+new entry "FROZEN"
+type "StatusData"
+data "StatusType" "INCAPACITATED"
+using "FROZEN"
+// Frozen
+// data "DisplayName" "hdb2fc03egbac3g4142g9972gf2291d9db39d;1"
+// Affected entity is utterly enamelled in ice and is &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;incapacitated&lt;/LSTag&gt;. If it is dealt Bludgeoning, Thunder, or Force damage, the ice shatters, ending the condition.
+// data "Description" "h08a3c817g8538g4b6dg925cgb218f2efb8e1;4"
+// Affected entity is utterly enamelled in ice and is &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;incapacitated&lt;/LSTag&gt;. If it is dealt[1],[2], or[3], the ice shatters, ending the condition.
+data "Description" "haab11d78g822cg4162g8a99gc4945d3abcf1;1"
+data "DescriptionParams" "DealDamage(,Bludgeoning);DealDamage(,Thunder);DealDamage(,Force)"
+// data "Icon" "Status_Frozen"
+// data "FormatColor" "Water"
+// data "MaterialType" "FadingOverlay"
+// data "MaterialApplyBody" "Yes"
+// data "MaterialApplyArmor" "Yes"
+// data "MaterialApplyWeapon" "Yes"
+// data "MaterialApplyNormalMap" "Yes"
+// data "MaterialFadeAmount" "3000"
+// data "MaterialParameters" "freezeDirection:SourceDirection"
+// data "AnimationLoop" "5f127742-79d4-4590-839f-6eb5ae45930d(REAC_Magic_External_Combat_01)"
+// data "AnimationEnd" "5f127742-79d4-4590-839f-6eb5ae45930d(REAC_Magic_External_Combat_01)"
+// data "StillAnimationType" "Petrified"
+// data "StillAnimationPriority" "Downed"
+// data "SoundStart" "Status_Tex_Frozen_Start"
+// data "SoundLoop" "Misc_Status_Frozen_MO"
+// data "SoundStop" "Misc_Status_Frozen_MO_Stop"
+data "TickType" "EndTurn"
+// data "FreezeTime" "500"
+// data "Boosts" "DetectDisturbancesBlock(true);Resistance(Bludgeoning,Vulnerable);Resistance(Thunder,Vulnerable);Resistance(Force,Vulnerable);Resistance(Fire, Resistant);StatusImmunity(BURNING);StatusImmunity(MAG_FROST)"
+data "Boosts" "DetectDisturbancesBlock(true);Resistance(Bludgeoning,Vulnerable);Resistance(Thunder,Vulnerable);Resistance(Force,Vulnerable);Resistance(Fire, Resistant);StatusImmunity(SG_Burning);StatusImmunity(MAG_FROST);AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);Advantage(AttackTarget);Resistance(Cold,Vulnerable)"
+// data "RemoveConditions" "FrozenStatusRemovalDamage()"
+// data "StatusPropertyFlags" "InitiateCombat;OverheadOnTurn"
+// data "RemoveEvents" "OnDamage"
+// data "StatusGroups" "SG_Condition;SG_Incapacitated"
+// data "OnApplyFunctors" "BreakConcentration();RemoveStatus(MAG_FROST)"
+// data "StatusEffect" "62318bbf-d36a-497c-91a4-bda8f7fb7af7"
