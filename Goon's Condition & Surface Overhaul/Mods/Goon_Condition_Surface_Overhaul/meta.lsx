@@ -8,7 +8,7 @@
         <node id="ModuleInfo">
           <attribute id="Author" type="LSString" value="Goonsack" />
           <attribute id="CharacterCreationLevelName" type="FixedString" value="" />
-          <attribute id="Description" type="LSString" value="Rebalancing statuses throughout the game." />
+          <attribute id="Description" type="LSString" value="Condition and surface bug fixes, quality of life adjustments, balance tweaks and more!" />
           <attribute id="Folder" type="LSString" value="Goon_Condition_Surface_Overhaul" />
           <attribute id="GMTemplate" type="FixedString" value="" />
           <attribute id="LobbyLevelName" type="FixedString" value="" />
@@ -21,7 +21,7 @@
           <attribute id="StartupLevelName" type="FixedString" value="" />
           <attribute id="Tags" type="LSString" value="" />
           <attribute id="Type" type="FixedString" value="Add-on" />
-          <attribute id="UUID" type="FixedString" value="fd1d63b4-bb9b-4e0f-9f2a-41f3b5a37d51" />
+          <attribute id="UUID" type="FixedString" value="d9403cba-2f48-4f26-9710-f4be44e076b7" />
           <attribute id="Version64" type="int64" value="36028797018963968" />
           <children>
             <node id="PublishVersion">
