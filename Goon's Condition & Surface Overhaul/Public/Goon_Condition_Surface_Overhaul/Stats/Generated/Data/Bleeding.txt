@@ -1,4 +1,7 @@
 // ==================================== Barbed Arrow: Barbed Bodkin - Ruptured ====================================
+// Changes: Now stacks additively, subsequent applications increase duration.
+// Changes: Will no longer apply to entities that are Immune to Bleeding.
+// Changes: Can now only trigger once per turn, instead of every individual instance of movement.
 
 new entry "BARBED_ARROW"
 type "StatusData"
@@ -8,17 +11,44 @@ using "BARBED_ARROW"
 // data "DisplayName" "h2f645568g92b7g4fdaga615g645f9491c9e0;3"
 // Take [1] damage when moving. Each time you move, reduce the condition duration by [2].
 // data "Description" "h88dababfg00beg45e5gbf94g6f71c3367a9b;5"
+// Once per turn, take [1] when moving. Each time you receive damage from this condition, reduce the duration by [2].
+data "Description" "heecaf2c3g4213g46bdg9282g713d50fe960c;1"
 // data "DescriptionParams" "DealDamage(1d4, Piercing);1"
 // data "Icon" "Status_Bleeding"
 data "OnApplyConditions" "not IsImmuneToStatus('SG_Bleeding',context.Source) and not IsImmuneToStatus('BLEEDING',context.Source)"
 // data "StackId" "BARBED_ARROW"
+data "StackType" "Additive"
+data "StackPriority" "1"
 // data "Passives" "BarbedArrow_Passive"
 // data "ManagedStatusEffectType" "Negative"
 // data "ManagedStatusEffectGroup" "6435c10a-c67d-4f79-8813-b84b0762f92b"
 
+new entry "BarbedArrow_Passive"
+type "PassiveData"
+using "BarbedArrow_Passive"
+// Barbed Arrow
+// data "DisplayName" "h8ad9ebfdge859g4bb5gbe5fgf1e3b812d5ac;1"
+// Ruptured
+data "DisplayName" "h2f645568g92b7g4fdaga615g645f9491c9e0;3"
+// Receive damage when moving.
+// data "Description" "hfe58be82g3adcg486cg8d7ag63589e4d6866;1"
+// Once per turn, take [1] when moving. Each time you receive damage from this condition, reduce the duration by [2].
+data "Description" "heecaf2c3g4213g46bdg9282g713d50fe960c;1"
+// data "Icon" "Action_HamstringShot"
+data "Icon" "Status_Bleeding"
+// data "PriorityOrder" "2"
+// data "Properties" "Highlighted"
+data "Properties" "Highlighted;OncePerTurn"
+// data "StatsFunctorContext" "OnMovedDistance"
+// data "StatsFunctors" "ApplyStatus(SELF,BARBED_ARROW_DAMAGE,100,0)"
+data "StatsFunctors" "DealDamage(1d4, Piercing,Nonmagical,,0,,true,true);SetStatusDuration(BARBED_ARROW,-1,Add)"
+
 // ==================================== Bleeding ====================================
-// Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 10d4 for 10+ rounds.
-// Includes native support for Arsenal Overhaul's "Heavy Bleeding" condition, increasing its damage from a flat 4 to 1d6 with the same scaling as Bleeding.
+// Changes: Now stacks additively, subsequent applications increase duration.
+// Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 9d4 for 9+ rounds.
+// Changes: Now provides Disadvantage on Constitution Saving throws.
+// Changes: Instead of the condition being removed outright by healing, the entity must also succeed a DC 10 Constitution Saving Throw.
+// Bonus: Includes native support for Arsenal Overhaul's "Heavy Bleeding" condition, increasing its damage from a flat 4 to 1d6 with the same scaling as Bleeding.
 
 new entry "BLEEDING"
 type "StatusData"
@@ -45,14 +75,16 @@ data "Boosts" "Disadvantage(SavingThrow, Constitution)"
 data "RemoveEvents" ""
 // data "TooltipDamage" "DealDamage(2, Slashing)"
 data "TooltipDamage" "DealDamage(1d4, Slashing)"
+data "OnApplyFunctors" ""
 // data "TickFunctors" "DealDamage(2, Slashing);AI_ONLY:DealDamage(1,Slashing)"
-data "TickFunctors" "AI_ONLY:DealDamage(1d4,Slashing);IF(StatusDurationLessThan(context.Target,'BLEEDING',2)):DealDamage(1d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',2)):DealDamage(2d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',3)):DealDamage(3d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',4)):DealDamage(4d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',5)):DealDamage(5d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',6)):DealDamage(6d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',7)):DealDamage(7d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',8)):DealDamage(8d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',9)):DealDamage(9d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',10)):DealDamage(10d4,Slashing)"
+data "TickFunctors" "AI_ONLY:DealDamage(1d4,Slashing);IF(StatusDurationLessThan(context.Target,'BLEEDING',2)):DealDamage(1d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',2)):DealDamage(2d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',3)):DealDamage(3d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',4)):DealDamage(4d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',5)):DealDamage(5d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',6)):DealDamage(6d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',7)):DealDamage(7d4,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'BLEEDING',8)):DealDamage(8d4,Slashing);IF(StatusDurationEqualOrMoreThan(context.Target,'BLEEDING',9)):DealDamage(9d4,Slashing)"
 // data "StatusPropertyFlags" "InitiateCombat"
 // data "StatusGroups" "SG_Condition"
 data "Passives" "Goon_Bleeding_Removal"
 
 // ==================================== Heavy Bleeding (Arsenal Overhaul) ====================================
 // TODO: Confirm: When overwriting Bleeding it should adjust the duration to match the previous Bleeding duration + the Heavy Bleeding application.
+// Changes: Will no longer apply to entities that are Immune to Bleeding.
 
 new entry "HEAVY_BLEEDING"
 type "StatusData"
@@ -79,9 +111,9 @@ data "Boosts" "Disadvantage(SavingThrow, Constitution)"
 data "RemoveEvents" ""
 // data "TooltipDamage" "DealDamage(4, Slashing);"
 data "TooltipDamage" "DealDamage(1d6, Slashing)"
-data "OnApplyFunctors" "SetStatusDuration(HEAVY_BLEEDING,100,Target.BLEEDING.Duration,Add)"
+data "OnApplyFunctors" ""
 // data "TickFunctors" "DealDamage(4, Slashing);AI_ONLY:DealDamage(6,Slashing)"
-data "TickFunctors" "AI_ONLY:DealDamage(1d6,Slashing);IF(StatusDurationLessThan(context.Target,'HEAVY_BLEEDING',2)):DealDamage(1d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',2)):DealDamage(2d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',3)):DealDamage(3d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',4)):DealDamage(4d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',5)):DealDamage(5d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',6)):DealDamage(6d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',7)):DealDamage(7d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',8)):DealDamage(8d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',9)):DealDamage(9d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',10)):DealDamage(10d6,Slashing)"
+data "TickFunctors" "AI_ONLY:DealDamage(1d6,Slashing);IF(StatusDurationLessThan(context.Target,'HEAVY_BLEEDING',2)):DealDamage(1d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',2)):DealDamage(2d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',3)):DealDamage(3d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',4)):DealDamage(4d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',5)):DealDamage(5d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',6)):DealDamage(6d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',7)):DealDamage(7d6,Slashing);IF(Goon_StatusGroupDurationEqualTo(context.Target,'HEAVY_BLEEDING',8)):DealDamage(8d6,Slashing);IF(StatusDurationEqualOrMoreThan(context.Target,'HEAVY_BLEEDING',9)):DealDamage(9d6,Slashing)"
 data "StatusPropertyFlags" "InitiateCombat"
 data "StatusGroups" "SG_Condition"
 data "Passives" "Goon_Bleeding_Removal"

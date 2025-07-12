@@ -19,7 +19,7 @@
 	<!-- "PETRIFIED" --> <content contentuid="h1c4e1ad3g8ddbg4182ga842gc666e4a076b5" version="1">Turned to stone. Can't move or take &lt;LSTag Tooltip="Action"&gt;Actions&lt;/LSTag&gt;, &lt;LSTag Tooltip="BonusAction"&gt;Bonus Actions&lt;/LSTag&gt;, or &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt;. &lt;LSTag Tooltip="Resistant"&gt;Resistant&lt;/LSTag&gt; to all damage.</content>
 	<!-- "ENTOMBED" --> <content contentuid="h2baf4d23g8e9ag44feg8b26ga6e3e896724b" version="1">Trapped in a spider's web. Can't move or take &lt;LSTag Tooltip="Action"&gt;Actions&lt;/LSTag&gt;, &lt;LSTag Tooltip="BonusAction"&gt;Bonus Actions&lt;/LSTag&gt;, or &lt;LSTag Type="ActionResource" Tooltip="ReactionActionPoint"&gt;Reactions&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;The condition ends upon taking damage.</content>
 
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "BARBED_ARROW", "BarbedArrow_Passive" --> <content contentuid="heecaf2c3g4213g46bdg9282g713d50fe960c" version="1">Once per turn, take [1] when moving. Each time you receive damage from this condition, reduce the duration by [2].</content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 
