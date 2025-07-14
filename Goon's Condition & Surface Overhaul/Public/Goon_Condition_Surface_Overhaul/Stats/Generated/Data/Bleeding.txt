@@ -1,7 +1,7 @@
 // ==================================== Barbed Arrow: Barbed Bodkin - Ruptured ====================================
+// Bug Fix: Description states that 1m/3ft of distance must be travelled for damage to trigger, instead of "Each time you move".
 // Changes: Now stacks additively, subsequent applications increase duration.
 // Changes: Will no longer apply to entities that are Immune to Bleeding.
-// Changes: Can now only trigger once per turn, instead of every individual instance of movement.
 
 new entry "BARBED_ARROW"
 type "StatusData"
@@ -11,9 +11,10 @@ using "BARBED_ARROW"
 // data "DisplayName" "h2f645568g92b7g4fdaga615g645f9491c9e0;3"
 // Take [1] damage when moving. Each time you move, reduce the condition duration by [2].
 // data "Description" "h88dababfg00beg45e5gbf94g6f71c3367a9b;5"
-// Once per turn, take [1] when moving. Each time you receive damage from this condition, reduce the duration by [2].
+// Take [1] when moving for each [2] &lt;LSTag Tooltip="MovementSpeed"&gt;moved&lt;/LSTag&gt;. Each time you receive damage from this condition, reduce the duration by [3].
 data "Description" "heecaf2c3g4213g46bdg9282g713d50fe960c;1"
 // data "DescriptionParams" "DealDamage(1d4, Piercing);1"
+data "DescriptionParams" "DealDamage(1d4, Piercing);Distance(1);1"
 // data "Icon" "Status_Bleeding"
 data "OnApplyConditions" "not IsImmuneToStatus('SG_Bleeding',context.Source) and not IsImmuneToStatus('BLEEDING',context.Source)"
 // data "StackId" "BARBED_ARROW"
@@ -32,13 +33,13 @@ using "BarbedArrow_Passive"
 data "DisplayName" "h2f645568g92b7g4fdaga615g645f9491c9e0;3"
 // Receive damage when moving.
 // data "Description" "hfe58be82g3adcg486cg8d7ag63589e4d6866;1"
-// Once per turn, take [1] when moving. Each time you receive damage from this condition, reduce the duration by [2].
+// Take [1] when moving for each [2] &lt;LSTag Tooltip="MovementSpeed"&gt;moved&lt;/LSTag&gt;. Each time you receive damage from this condition, reduce the duration by [3].
 data "Description" "heecaf2c3g4213g46bdg9282g713d50fe960c;1"
+data "DescriptionParams" "DealDamage(1d4, Piercing);Distance(1);1"
 // data "Icon" "Action_HamstringShot"
 data "Icon" "Status_Bleeding"
 // data "PriorityOrder" "2"
 // data "Properties" "Highlighted"
-data "Properties" "Highlighted;OncePerTurn"
 // data "StatsFunctorContext" "OnMovedDistance"
 // data "StatsFunctors" "ApplyStatus(SELF,BARBED_ARROW_DAMAGE,100,0)"
 data "StatsFunctors" "DealDamage(1d4, Piercing,Nonmagical,,0,,true,true);SetStatusDuration(BARBED_ARROW,-1,Add)"
