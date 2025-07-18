@@ -1,6 +1,7 @@
 // ==================================== Burning ====================================
 // Changes: Now stacks additively, subsequent applications increase duration.
 // Changes: Damage is based on duration, increasing by 1d4 for each round left on the target up to a maximum of 9d4 for 9+ rounds. (Max damage same as Roiling Hellfire, 36.)
+// TODO: Unfuck the Additive stacking, workaround for camps with torches and such crashing.
 
 new entry "BURNING"
 type "StatusData"
@@ -19,7 +20,7 @@ data "Description" "h67f4f865g2bf9g4282g9cadg85f6fdea55b1;1"
 // data "SoundLoop" "Misc_Status_Burning_MO"
 // data "SoundStop" "Misc_Status_Burning_MO_Stop"
 // data "StackId" "BURNING"
-data "StackType" "Additive"
+// data "StackType" "Additive" // BUG
 data "StackPriority" "1"
 // data "SurfaceChange" "Ignite"
 // data "TickType" "StartTurn"
