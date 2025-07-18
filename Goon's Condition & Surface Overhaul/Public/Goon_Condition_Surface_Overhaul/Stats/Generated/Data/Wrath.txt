@@ -1,0 +1,13 @@
+// ==================================== Wrath ====================================
+// Changes: Applies to throwing melee weapons.
+
+new entry "MAG_VIOLENCE"
+type "StatusData"
+data "StatusType" "BOOST"
+using "MAG_VIOLENCE"
+// You have a +1 bonus to damage with melee weapons for every turn this condition has remaining. 
+// data "Description" "h75d93606g8b1cg4cf9g9d7fga8ed5ac3f524;6"
+// You have a +1 bonus to damage when throwing or &lt;LSTag Tooltip="AttackRoll"&gt;attacking&lt;/LSTag&gt; with a melee weapon, for every turn this condition has remaining.
+data "Description" "h955519f7g26c3g4e76g802bg9944bc0a6b6a;1"
+// data "Boosts" "IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1)"
+data "Boosts" "IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1);IF(IsRangedUnarmedAttack() and Goon_IsWeapon(context.HitDescription.ThrownObject)):CharacterUnarmedDamage(1)"

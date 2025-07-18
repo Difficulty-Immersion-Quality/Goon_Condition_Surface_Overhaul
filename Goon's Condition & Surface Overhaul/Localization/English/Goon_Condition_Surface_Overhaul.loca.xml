@@ -24,7 +24,7 @@
 	<!-- "MAG_FROST" --> <content contentuid="h493e0851gdef1g4ac7gabf2g3b4eca27a671" version="1">Affected entity has &lt;LSTag Tooltip="Disadvantage"&gt;Disadvantage&lt;/LSTag&gt; on &lt;LSTag Tooltip="Dexterity"&gt;Dexterity&lt;/LSTag&gt; &lt;LSTag Tooltip="SavingThrow"&gt;Saving Throws&lt;/LSTag&gt;.&lt;br&gt;&lt;br&gt;When there are [1] or more turns remaining, the entity must succeed a &lt;LSTag Tooltip="Constitution"&gt;Constitution&lt;/LSTag&gt; Saving Throw or become &lt;LSTag Type="Status" Tooltip="FROZEN"&gt;Frozen&lt;/LSTag&gt;. On a successful save, take [2]. Afterward, the frost sloughs away.&lt;br&gt;&lt;br&gt;Removed by &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt;.</content>
 	<!-- "FROZEN" --> <content contentuid="haab11d78g822cg4162g8a99gc4945d3abcf1" version="1">Affected entity is utterly enamelled in ice and is &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;incapacitated&lt;/LSTag&gt;. If it is dealt[1],[2], or[3], the ice shatters, ending the condition.</content>
 
-	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "MAG_VIOLENCE" --> <content contentuid="h955519f7g26c3g4e76g802bg9944bc0a6b6a" version="1">You have a +1 bonus to damage when throwing or &lt;LSTag Tooltip="AttackRoll"&gt;attacking&lt;/LSTag&gt; with a melee weapon, for every turn this condition has remaining. </content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 
 	<content contentuid="hf5c94340gc6fdg440dg8aa2ga74105b1dcde" version="1">Stop Drop and Roll</content>
