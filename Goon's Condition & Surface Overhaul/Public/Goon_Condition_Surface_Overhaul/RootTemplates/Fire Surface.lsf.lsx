@@ -86,8 +86,9 @@
 									<attribute id="ApplyToItems" type="bool" value="True" />
 									<attribute id="ApplyTypes" type="uint8" value="11" />
 									<attribute id="Chance" type="float" value="1" />
-									<!-- <attribute id="DontTickWhileOnSurface" type="bool" value="True" /> -->
-									<attribute id="DontTickWhileOnSurface" type="bool" value="False" />
+									<attribute id="DontTickWhileOnSurface" type="bool" value="True" />
+									<!-- TODO: Janky fix with technicals and all that fun stuff, or just a better scripting implementation. -->
+									<!-- <attribute id="DontTickWhileOnSurface" type="bool" value="False" /> -->
 									<attribute id="Duration" type="float" value="6" />
 									<attribute id="Force" type="bool" value="False" />
 									<attribute id="KeepAlive" type="bool" value="False" />
