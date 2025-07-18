@@ -15,7 +15,7 @@ data "SpellProperties" "GROUND:IF(Surface('SurfaceFire') and WieldingWeapon('Dip
 // data "TargetRadius" "3"
 // data "RequirementConditions" "HasDippableWeapon()"
 // data "TargetConditions" "IsDippableSurface() or IsOnFire()"
-data "TargetConditions" "IsDippableSurface() or Goon_HasBurningCondition_Normal()"
+data "TargetConditions" "IsDippableSurface() or Goon_HasBurningConditionOrTag_Normal() or Goon_HasBurningCondition_Hell()"
 // data "Icon" "Action_Dip"
 // Dip
 // data "DisplayName" "h23d28f36gcdebg489bga4f9g3ede90a86b0a;1"
