@@ -48,11 +48,11 @@ using "Shout_Overheat_Azer"
 data "SpellSuccess" "ApplyStatus(BURNING,100,4)"
 // Release a fraction of your inner fire. All nearby creatures take damage and start &lt;LSTag Type="Status" Tooltip="BURNING_AZER"&gt;Burning Fiercely&lt;/LSTag&gt;.
 // data "Description" "hcf59468fg7987g4e03g9d9dgb2d3cfedf742;2"
-// Release a fraction of your inner fire. All nearby creatures take damage and have &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; applied for [1] turns.
+// Release a fraction of your inner fire.&lt;br&gt;&lt;br&gt;All nearby creatures start &lt;LSTag Type="Status" Tooltip="BURNING"&gt;Burning&lt;/LSTag&gt; for [1] turns.
 data "Description" "h70615a33ge8abg425ag8143g1845ab2552a1;1"
 data "DescriptionParams" "4"
 // data "TooltipDamageList" "DealDamage(1d10,Fire)"
-data "TooltipDamageList" "DealDamage(1d12,Fire)"
+data "TooltipDamageList" "DealDamage(4d4,Fire)"
 // data "TooltipStatusApply" "ApplyStatus(BURNING_AZER,100,3)"
 data "TooltipStatusApply" "ApplyStatus(BURNING,100,4)"
 
