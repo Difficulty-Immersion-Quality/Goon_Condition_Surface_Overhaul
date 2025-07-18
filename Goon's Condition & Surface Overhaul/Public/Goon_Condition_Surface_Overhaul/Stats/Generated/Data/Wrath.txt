@@ -1,5 +1,5 @@
 // ==================================== Wrath ====================================
-// Changes: Applies to throwing melee weapons.
+// Changes: Additional damage also applies when throwing melee weapons.
 
 new entry "MAG_VIOLENCE"
 type "StatusData"
