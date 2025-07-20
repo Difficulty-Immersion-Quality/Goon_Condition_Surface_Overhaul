@@ -5,9 +5,21 @@ new entry "MAG_VIOLENCE"
 type "StatusData"
 data "StatusType" "BOOST"
 using "MAG_VIOLENCE"
+// Wrath
+// data "DisplayName" "h39f37b67g23e4g41fcg9357g9fd3e4a2e0a3;3"
 // You have a +1 bonus to damage with melee weapons for every turn this condition has remaining. 
 // data "Description" "h75d93606g8b1cg4cf9g9d7fga8ed5ac3f524;6"
-// You have a +1 bonus to damage when throwing or &lt;LSTag Tooltip="AttackRoll"&gt;attacking&lt;/LSTag&gt; with a melee weapon, for every turn this condition has remaining.
+// You have a +1 bonus to damage when throwing or &lt;LSTag Tooltip="AttackRoll"&gt;attacking&lt;/LSTag&gt; with a melee weapons, for every turn this condition has remaining.
 data "Description" "h955519f7g26c3g4e76g802bg9944bc0a6b6a;1"
+// data "Icon" "statIcons_Violence"
+// data "SoundLoop" "Misc_Status_Violence"
+// data "SoundStop" "Misc_Status_Violence_Stop"
+// data "StackId" "MAG_VIOLENCE"
+// data "StackType" "Additive"
+// data "TickType" "EndTurn"
 // data "Boosts" "IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1)"
-data "Boosts" "IF(IsMeleeWeaponAttack()):CharacterWeaponDamage(1);IF(IsRangedUnarmedAttack() and Goon_IsWeapon(context.HitDescription.ThrownObject)):CharacterUnarmedDamage(1)"
+data "Boosts" "IF(IsMeleeWeaponAttack() or (IsRangedUnarmedAttack() and HasWeaponProperty(WeaponProperties.Melee, context.HitDescription.ThrownObject))):DamageBonus(1)"
+// data "StatusPropertyFlags" "MultiplyEffectsByDuration"
+// data "ApplyEffect" "6757b0ff-7bc8-489b-b474-e6c7b867cef3"
+// data "StatusEffect" "2dfef979-a542-4b9e-8854-436216f2836b"
+// data "Passives" "Goon_Wrath_Boosts_Passive"
