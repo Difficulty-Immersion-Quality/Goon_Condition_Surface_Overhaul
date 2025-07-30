@@ -1,0 +1,80 @@
+// ==================================== Castigated By Divinity ====================================
+// Bug Fix: Devas are no longer summoned from any means other than the affected entity dying.
+// Bug Fix: The reapplication of the technical status will not take place if it already exists on the entity.
+// Bug Fix: Junk passives are now hidden.
+// Changes: The cooldown for summoning hostile deva is now refreshed on long rest, instead of when the entity recieves healing.
+
+new entry "LOW_STORMSHORETABERNACLE_GODCURSED"
+type "StatusData"
+data "StatusType" "BOOST"
+using "LOW_STORMSHORETABERNACLE_GODCURSED"
+// Castigated By Divinity
+// data "DisplayName" "h833a192dg5614g4cdbg88eeg20b04401df48;4"
+// Affected entity is cursed by transgressed and irritable gods. When it falls unconscious, it immediately dies. Moreover, when it dies, a terrible envoy of the offended deity is conjured from the entity's corpse.
+// data "Description" "h8dde7628ge88cg4748ga6b1g23dad30c5024;5"
+// Affected entity is cursed by transgressed and irritable gods. When it falls unconscious, it immediately dies.&lt;br&gt;&lt;br&gt;Once per long rest, when the affected entity dies a terrible envoy of the offended deity is conjured from the entity's corpse.
+data "Description" "h07e5bdbcge7bcg47fdgaf02gb81f0034b090;1"
+// data "Icon" "GenericIcon_Intent_Debuff"
+// data "SoundStart" "Misc_Status_Stormshoretabernacle_Godcursed"
+// data "StackId" "LOW_STORMSHORETABERNACLE_GODCURSED"
+// data "Passives" "LOW_StormshoreTabernacle_Curse_KillingBlow_Passive;LOW_StormshoreTabernacle_Curse_SpawnEnvoy_Passive;LOW_StormshoreTabernacle_Curse_SpawnEnvoy_LonRest_Refresh_Passive"
+// data "StatusPropertyFlags" "ApplyToDead;IgnoreResting"
+// data "OnApplyFunctors" "ApplyStatus(LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL, 100, -1)"
+// data "OnRemoveFunctors" "RemoveStatus(LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL)"
+// data "StatusGroups" "SG_Cursed"
+// data "ApplyEffect" "19e5b26f-ddda-4c10-a8b0-87407fccdabe"
+
+new entry "LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "LOW_STORMSHORETABERNACLE_GODCURSED"
+using "LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL"
+// %%%Curse of Chained Punishment Technical
+// data "DisplayName" "hd5523116gebdeg4c5fg9afdga05df49b22f5;1"
+// %%%Used to summon the Envoy.
+// data "Description" "h3b0c4b9fg46cdg43b9g985aga49684cb9ca0;1"
+// data "Icon" ""
+// data "StackId" "LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL"
+// data "Passives" ""
+// data "RemoveConditions" "IsKillingBlow() or IsDowned()"
+data "RemoveConditions" ""
+// data "RemoveEvents" "OnDamage"
+data "RemoveEvents" ""
+// data "StatusPropertyFlags" "DisableInteractions;DisableOverhead;DisableCombatlog;IgnoreResting;DisablePortraitIndicator"
+// data "OnApplyFunctors" ""
+// data "OnRemoveFunctors" "IF(not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_EVIL')):Spawn(2f2f3a4a-ebaa-4dba-9b14-47c6af82ffc6);IF(not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_GOOD')):Spawn(c1095e3a-96f6-400b-95c2-fa6316d06a83);IF(not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_NEUTRAL')):Spawn(9db24399-3c91-4702-a267-5ead21a64f80);IF(not HasDeathType(DeathType.Chasm) and not Tagged('ALIGN_GOOD') and not Tagged('ALIGN_EVIL') and not Tagged('ALIGN_NEUTRAL')):Spawn(c1095e3a-96f6-400b-95c2-fa6316d06a83)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.Death) and not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_EVIL')):Spawn(2f2f3a4a-ebaa-4dba-9b14-47c6af82ffc6);IF(RemoveCause(StatusRemoveCause.Death) and not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_GOOD')):Spawn(c1095e3a-96f6-400b-95c2-fa6316d06a83);IF(RemoveCause(StatusRemoveCause.Death) and not HasDeathType(DeathType.Chasm) and Tagged('ALIGN_NEUTRAL')):Spawn(9db24399-3c91-4702-a267-5ead21a64f80);IF(RemoveCause(StatusRemoveCause.Death) and not HasDeathType(DeathType.Chasm) and not Tagged('ALIGN_GOOD') and not Tagged('ALIGN_EVIL') and not Tagged('ALIGN_NEUTRAL')):Spawn(c1095e3a-96f6-400b-95c2-fa6316d06a83)"
+// data "ApplyEffect" ""
+
+new entry "LOW_StormshoreTabernacle_Curse_KillingBlow_Passive"
+type "PassiveData"
+using "LOW_StormshoreTabernacle_Curse_KillingBlow_Passive"
+// Killing Blow
+// data "DisplayName" "h5687dc85g7bccg46c1gb435gbaf9e110bd3f;1"
+// When you are reduced to 0 <LSTag Tooltip="HitPoints">hit points</LSTag>, you instantly die.
+// data "Description" "hf042524cg8075g4f99g8d15gd5d2c00ae086;2"
+data "Properties" "IsHidden"
+// data "StatsFunctorContext" "OnDamaged"
+// data "Conditions" "IsKillingBlow() or IsDowned()"
+// data "StatsFunctors" "Kill()"
+
+new entry "LOW_StormshoreTabernacle_Curse_SpawnEnvoy_Passive"
+type "PassiveData"
+using "LOW_StormshoreTabernacle_Curse_SpawnEnvoy_Passive"
+// Spawn Envoy
+// data "DisplayName" "h7d4a0caagb8f1g4ae9g83a6ga919ddcf1eba;1"
+// Upon your death, spawn the Envoy.
+// data "Description" "h67630539g730eg447fgb4c5g67ae2c45ef38;1"
+// data "Properties" "OncePerLongRest"
+data "Properties" "IsHidden"
+// data "StatsFunctorContext" "OnHealed"
+data "StatsFunctorContext" "OnLongRest"
+data "Conditions" "not HasStatus('LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL')"
+// data "StatsFunctors" "ApplyStatus(LOW_STROMSHORETABERNACLE_GODCUSED_TECHNICAL, 100, -1)"
+
+new entry "LOW_StormshoreTabernacle_Curse_SpawnEnvoy_LonRest_Refresh_Passive"
+type "PassiveData"
+using "LOW_StormshoreTabernacle_Curse_SpawnEnvoy_LonRest_Refresh_Passive"
+// Spawn Envoy Gathering Power
+// data "DisplayName" "h185c1489gc374g4d8eg84a8ga5a4b6ac3097;1"
+data "Properties" "IsHidden"
