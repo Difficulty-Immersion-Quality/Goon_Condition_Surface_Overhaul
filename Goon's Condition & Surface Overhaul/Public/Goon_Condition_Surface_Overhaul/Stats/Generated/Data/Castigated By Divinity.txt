@@ -2,7 +2,7 @@
 // Bug Fix: Devas are no longer summoned from any means other than the affected entity dying.
 // Bug Fix: The reapplication of the technical status will not take place if it already exists on the entity.
 // Bug Fix: Junk passives are now hidden.
-// Changes: The cooldown for summoning hostile deva is now refreshed on long rest, instead of when the entity recieves healing.
+// Changes: The cooldown for summoning hostile deva is now refreshed on long rest, instead of when the entity receives healing.
 
 new entry "LOW_STORMSHORETABERNACLE_GODCURSED"
 type "StatusData"
