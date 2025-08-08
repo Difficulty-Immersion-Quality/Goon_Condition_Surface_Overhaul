@@ -3,6 +3,7 @@
 // Changes: No longer provides Vulnerability to Lightning and Cold damage.
 // Changes: Now incoming Lightning and Cold damage attacks have Advantage, and the entity has Disadvantage on all associated Saving Throws.
 // Changes: Application is now shown in the combat log.
+// Changes: No longer removes Invisibility.
 
 new entry "WET"
 type "StatusData"
@@ -31,6 +32,7 @@ data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resist
 // data "StatusPropertyFlags" "DisableCombatlog;DisableOverhead"
 data "StatusPropertyFlags" "DisableOverhead"
 // data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SLEEPING);RemoveStatus(SLEEP);RemoveStatus(SG_Invisible);RemoveStatus(SG_Sleeping);"
+data "OnApplyFunctors" "ApplyEquipmentStatus(MainHand,DIPPED_WATER,100,0);ApplyEquipmentStatus(OffHand,DIPPED_WATER,100,0);RemoveStatus(SG_Sleeping)"
 // data "StatusGroups" "SG_Surface"
 // data "StatusEffect" "33b6ed26-a3d2-46ac-a5ba-932637344771"
 // data "SplatterDirtAmount" "-2"
