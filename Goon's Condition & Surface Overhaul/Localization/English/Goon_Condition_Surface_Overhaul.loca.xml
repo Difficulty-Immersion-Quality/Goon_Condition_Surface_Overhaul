@@ -26,6 +26,16 @@
 	<!-- "FROZEN" --> <content contentuid="haab11d78g822cg4162g8a99gc4945d3abcf1" version="1">Affected entity is utterly enamelled in ice and is &lt;LSTag Type="Status" Tooltip="INCAPACITATED"&gt;incapacitated&lt;/LSTag&gt;. If it is dealt[1],[2], or[3], the ice shatters, ending the condition.</content>
 
 	<!-- "MAG_VIOLENCE" --> <content contentuid="h955519f7g26c3g4e76g802bg9944bc0a6b6a" version="1">You have a +1 bonus to damage when throwing or &lt;LSTag Tooltip="AttackRoll"&gt;attacking&lt;/LSTag&gt; with a melee weapons, for every turn this condition has remaining. </content>
+
+	<!-- "SEE_INVISIBILITY" --> <content contentuid="hd3da4135g93e7g41edg99c3g11ffcbce5a3f" version="1">&lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt; creatures within [1] are revealed and cannot benefit from their invisibility against you.</content>
+	<!-- "SEE_INVISIBILITY_REVEAL" --> <content contentuid="h0f1395ebg634ag4301gbca5gecbc01bf2d97" version="1">This &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisibile&lt;/LSTag&gt; entity's location is being revealed due to the effects of &lt;LSTag Type="Spell" Tooltip="Shout_SeeInvisibility"&gt;See Invisibility&lt;/LSTag&gt;. It retains the effects from being Invisible against those who cannot see it.</content>
+	<!-- "Shout_SeeInvisibility_Seek" --> <content contentuid="ha06ae06dg1c88g43abgb807ga9f61ecca2b5" version="1">Search for nearby &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt; creatures.</content>
+	<!-- "SEE_INVISIBILITY_SEEK" --> <content contentuid="h2a6ec662gd025g40f4g8f6cg16cc8f609c7a" version="1">Searching for nearby &lt;LSTag Type="Status" Tooltip="INVISIBLE"&gt;Invisible&lt;/LSTag&gt; creatures.</content>
+	<!-- "Target_Invisibility_Greater" --> <content contentuid="h139898d5ge7adg4db0g871bg606b7ca02744" version="1">Invisibility breaks on losing concentration. If you attack or cast a spell, enemies will notice you and begin to seek you out.</content>
+
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
+	<!-- "" --> <content contentuid="" version="1"></content>
 	<!-- "" --> <content contentuid="" version="1"></content>
 
 	<content contentuid="hf5c94340gc6fdg440dg8aa2ga74105b1dcde" version="1">Stop Drop and Roll</content>
