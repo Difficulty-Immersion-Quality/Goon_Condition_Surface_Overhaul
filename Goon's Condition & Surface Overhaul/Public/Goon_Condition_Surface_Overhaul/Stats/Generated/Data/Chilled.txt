@@ -57,7 +57,7 @@ data "RemoveConditions" "StatusId('SG_Burning')"
 // data "TooltipSave" "Constitution"
 // data "OnApplyFunctors" "IF(HasStatus('BURNING')):RemoveStatus(MAG_FROST)"
 data "OnApplyFunctors" ""
-data "OnApplyConditions" "not HasStatus('SG_Burning')"
+data "OnApplyConditions" "not HasStatus('SG_Burning',context.Source)"
 // data "StatusEffect" "ad70c67d-f4f6-4dea-b6b6-d871fae6ddc1"
 
 // new entry "MAG_Frost_Passive"
