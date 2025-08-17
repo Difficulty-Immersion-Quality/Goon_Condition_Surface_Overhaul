@@ -49,6 +49,58 @@ data "OnApplyConditions" "not IsImmuneToStatus('SG_Silenced',context.Source) and
 // data "Boosts" "BlockVerbalComponent(); Resistance(Thunder, Immune);" //TODO: Replace with "BlockVerbalComponent()"
 // data "StatusGroups" "SG_Condition;SG_DropForNonMutingDialog"
 
+// ==================================== Auras
+
+new entry "SILENCED_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "SILENCED_AURA"
+// Silence Aura
+// data "DisplayName" "h418af47eg619ag464cgb5c6gbd471be8fb1d;1"
+// While it remains in the aura, affected entity is &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt;.
+// data "Description" "heb9742ddgf56eg49e8gafb8g74047f5b1826;2"
+// data "Icon" "Spell_Illusion_Silence"
+// data "SoundStart" "Misc_Status_Silence_Gameobject_Mute"
+// data "SoundStop" "Misc_Status_Silence_Gameobject_Unmute"
+// data "AuraRadius" "6"
+// data "AuraStatuses" "ApplyStatus(SILENCED)"
+data "AuraStatuses" "IF(not HasStatus('SG_Silenced')):ApplyStatus(SILENCED)"
+// data "ApplyEffect" "004bb348-d674-416c-a67e-366fd63e1ff1"
+// data "StatusEffect" "bb24db0e-f040-4e1d-8c04-aa8046018b69"
+
+new entry "COL_NECROMANCERCAGE_SILENCE_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+using "COL_NECROMANCERCAGE_SILENCE_AURA"
+// Profane Womb-Bound
+// data "DisplayName" "h69d2c7e7g8a93g467fg9ac8g8e688dad9a70;2"
+// &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; and held in place by a Profane Womb.
+// data "Description" "hcb46822cg58ceg4133g9760g88356d3ddf79;3"
+// data "Icon" "GenericIcon_Intent_Control"
+// data "AuraRadius" "1"
+// data "AuraStatuses" "TARGET:IF(Character() and not (Tagged('REALLY_ASTARION') or Tagged('UNDEAD'))):ApplyStatus(SILENCED);TARGET:IF(Character() and not (Tagged('REALLY_ASTARION') or Tagged('UNDEAD'))):ApplyStatus(COL_NECROMANCERCAGE_ENTANGLED);TARGET:IF(Character()):ApplyStatus(AI_HELPER_IGNORED_TARGET);"
+data "AuraStatuses" "TARGET:IF(Character() and not (Tagged('REALLY_ASTARION') or Tagged('UNDEAD')) and not HasStatus('SG_Silenced')):ApplyStatus(SILENCED);TARGET:IF(Character() and not (Tagged('REALLY_ASTARION') or Tagged('UNDEAD'))):ApplyStatus(COL_NECROMANCERCAGE_ENTANGLED);TARGET:IF(Character()):ApplyStatus(AI_HELPER_IGNORED_TARGET)"
+
+new entry "VORTEX_AURA"
+type "StatusData"
+data "StatusType" "BOOST"
+// using "SILENCED_AURA"
+using "VORTEX_AURA"
+// Raging Vortex Aura
+// data "DisplayName" "h6ff01c0eg16dcg4502g9dbagfe7aab02eea6;3"
+// Affected entity is &lt;LSTag Type="Status" Tooltip="SILENCED"&gt;Silenced&lt;/LSTag&gt; and takes [1] per turn while remaining in the vortex.
+// data "Description" "h2e32ec5ag25a3g48e9g91afgfcb4461cc406;6"
+// data "DescriptionParams" "DealDamage(2d8,Bludgeoning)"
+// data "Icon" "GenericIcon_Intent_Debuff"
+// data "StackId" "VORTEX_AURA"
+// data "AuraStatuses" "IF(not Dead() and Character()):ApplyStatus(SILENCED);IF(not Dead() and Character()):ApplyStatus(VORTEX_DAMAGE,100,1)"
+data "AuraStatuses" "IF(not Dead() and Character() and not HasStatus('SG_Silenced')):ApplyStatus(SILENCED);IF(not Dead() and Character()):ApplyStatus(VORTEX_DAMAGE)"
+// data "TooltipDamage" "DealDamage(2d8,Bludgeoning)"
+// data "StatusPropertyFlags" "InitiateCombat;BringIntoCombat"
+// data "OnApplyFunctors" "DealDamage(2d8,Bludgeoning,Magical)"
+// data "ApplyEffect" "a63c881e-c8f3-4801-ba9e-e47e331ddb56"
+// data "StatusEffect" "599e8063-33e6-4263-af56-b8c4f429e837"
+
 // ==================================== Silenced (Custom) ====================================
 // TODO: Append them with "Goon_" and other QA?
 
