@@ -1,0 +1,5 @@
+{
+    "RequiredVersion": 1,
+    "ModTable": "Goon_Condition_Surface_Overhaul",
+    "FeatureFlags": ["Lua"]
+}
