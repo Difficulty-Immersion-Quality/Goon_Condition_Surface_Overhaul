@@ -21,7 +21,7 @@ data "DescriptionParams" "DealDamage(,Cold);DealDamage(,Fire)"
 // data "MaterialApplyNormalMap" "Yes"
 // data "MaterialFadeAmount" "3000"
 // data "StackId" "CHILLED"
-data "StackType" "Additive"
+// data "StackType" "Additive" // BUG
 data "StackPriority" "1"
 // data "Boosts" "Resistance(Fire, Resistant);Resistance(Cold, Vulnerable)"
 // data "StatusPropertyFlags" "InitiateCombat;DisableCombatlog;DisableOverhead"

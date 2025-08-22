@@ -25,7 +25,7 @@ data "DescriptionParams" "DealDamage(,Fire);DealDamage(,Lightning);DealDamage(,C
 // data "MaterialApplyNormalMap" "Yes"
 // data "MaterialFadeAmount" "3000"
 // data "StackId" "WET"
-data "StackType" "Additive"
+// data "StackType" "Additive" // BUG
 // data "StackPriority" "10"
 // data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Lightning, Vulnerable);Resistance(Cold, Vulnerable);Resistance(Fire, Resistant)"
 data "Boosts" "StatusImmunity(BURNING);StatusImmunity(WILD_MAGIC_BURNING);Resistance(Fire, Resistant);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Advantage(AttackTarget);IF(SpellDamageTypeIs(DamageType.Lightning) or SpellDamageTypeIs(DamageType.Cold)):Disadvantage(AllSavingThrows)"

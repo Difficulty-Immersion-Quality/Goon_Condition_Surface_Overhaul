@@ -17,7 +17,7 @@ using "ACID"
 // data "SoundStop" "Misc_Status_Acid_MO_Stop"
 // data "OnApplyConditions" "not Item(context.Source)"
 // data "StackId" "ACID"
-data "StackType" "Additive"
+// data "StackType" "Additive" // BUG
 // data "TickType" "StartTurn"
 // data "Boosts" "AC(-2)"
 // data "StatusPropertyFlags" "InitiateCombat"

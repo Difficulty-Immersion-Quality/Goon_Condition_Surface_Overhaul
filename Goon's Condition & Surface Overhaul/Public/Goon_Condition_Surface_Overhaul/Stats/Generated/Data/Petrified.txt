@@ -29,7 +29,7 @@ data "Description" "h1c4e1ad3g8ddbg4182ga842gc666e4a076b5;1"
 // data "SoundLoop" "Misc_Status_Petrified_MO"
 // data "SoundStop" "Misc_Status_Petrified_MO"
 data "StackId" "PETRIFIED"
-data "StackType" "Additive"
+// data "StackType" "Additive" // BUG
 data "StackPriority" "1"
 // data "FreezeTime" "1500"
 // data "Boosts" "Resistance(Piercing,Resistant);Resistance(Bludgeoning,Vulnerable);Resistance(Slashing,Resistant);Resistance(Acid,Vulnerable);Resistance(Cold,Resistant);Resistance(Fire,Resistant);Resistance(Force,Resistant);Resistance(Lightning,Immune);Resistance(Necrotic,Immune);Resistance(Poison,Immune);Resistance(Psychic,Immune);Resistance(Radiant,Immune);Resistance(Thunder,Vulnerable);Attribute(Grounded);StatusImmunity(SG_Poisoned);Advantage(AttackTarget);AbilityFailedSavingThrow(Strength);AbilityFailedSavingThrow(Dexterity);DetectDisturbancesBlock(true);Tag(BLOCK_PICKPOCKET);Tag(DOWNED_DISABLED);StatusImmunity(DISARM);DialogueBlock()"
