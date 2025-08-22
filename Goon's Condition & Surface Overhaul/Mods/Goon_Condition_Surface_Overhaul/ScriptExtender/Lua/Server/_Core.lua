@@ -5,8 +5,12 @@ local function GetStatusStackId(status)
 end
 
 local function FindActiveStatusWithStackId(character, stackId, excludeStatus)
-    local statuses = Ext.Entity.Get(character).StatusManager.Statuses
-    for _, s in ipairs(statuses) do
+    local entity = Ext.Entity.Get(character)
+    if not entity or not entity.Statuses then
+        Ext.Utils.PrintWarning("[StatusCombiner] No Statuses for: " .. tostring(character))
+        return nil
+    end
+    for _, s in ipairs(entity.Statuses) do
         if s.StatusId ~= excludeStatus then
             local stat = Ext.Stats.Get(s.StatusId)
             if stat and stat.StackId == stackId then
@@ -17,10 +21,10 @@ local function FindActiveStatusWithStackId(character, stackId, excludeStatus)
     return nil
 end
 
--- Helper: Get the duration of a status on a character
 local function GetStatusDuration(character, status)
-    local statuses = Ext.Entity.Get(character).StatusManager.Statuses
-    for _, s in ipairs(statuses) do
+    local entity = Ext.Entity.Get(character)
+    if not entity or not entity.Statuses then return 0 end
+    for _, s in ipairs(entity.Statuses) do
         if s.StatusId == status then
             return s.CurrentLifeTime or 0
         end
