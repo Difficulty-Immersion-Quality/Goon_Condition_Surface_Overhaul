@@ -242,6 +242,7 @@ data "ExtraDescription" "h139898d5ge7adg4db0g871bg606b7ca02744;1"
 // data "CastEffect" "4f8e353e-c04e-45c3-880b-d10885fd091f"
 // data "TargetEffect" "aab47e6c-59a5-44c4-830d-15fdde7348b8"
 
+// TODO: Actual description for functionality
 new entry "GREATER_INVISIBILITY"
 type "StatusData"
 data "StatusType" "INVISIBLE"
@@ -805,7 +806,7 @@ data "RemoveConditions" "not HasStatus('SEE_INVISIBILITY_REVEAL')"
 // data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(MAG_INVISIBLE_WEAPON_SEEN,100,Target.MAG_INVISIBLE_WEAPON.Duration,,,,,true)"
 data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(MAG_INVISIBLE_WEAPON,100,Target.GOON_MAG_INVISIBLE_WEAPON_SEEN.Duration,,,,,true)"
 
-// ==================================== Book of Druids - Walker in Dreams ====================================
+// ==================================== Book of Druids - Circle of Dreams: Walker in Dreams ====================================
 
 // new entry "DREAMS_WALKER_TECHNICAL"
 // type "StatusData"
@@ -835,3 +836,36 @@ data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasS
 // data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); Advantage(AttackRoll); DetectDisturbancesBlock(true)"
 // data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
 // data "StatusEffect" "d26436d4-d019-4dfc-b2f1-da0ac195575f"
+
+// ==================================== Expansion - Monk: Empty Body ====================================
+// TODO: Maybe compare against Greater Invisibility further, but at least it now functions with See Invisibility.
+
+new entry "EMPTY_BODY"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+// using "INVISIBILITY"
+using "EMPTY_BODY"
+// Empty Body
+// data "DisplayName" "hb7e698cfg4d01g4c02g8d72g8a074414024d;1"
+// This entity is &lt;LSTag Type="Status" Tooltip="INVISIBILITY"&gt;Invisible&lt;/LSTag&gt; and &lt;LSTag Type="Status" Tooltip="RESISTANCE"&gt;Resistant&lt;/LSTag&gt; to all damage except force damage.
+// data "Description" "h5f4df36fge60cg426agb675g86c92d44cd71;1"
+// data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); Advantage(AttackRoll); DetectDisturbancesBlock(true);Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Piercing,Resistant);Resistance(Fire,Resistant);Resistance(Cold,Resistant);Resistance(Acid,Resistant);Resistance(Poison,Resistant);Resistance(Thunder,Resistant);Resistance(Lightning,Resistant);Resistance(Radiant,Resistant);Resistance(Necrotic,Resistant);Resistance(Psychic,Resistant)"
+data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); IF(not Goon_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not Goon_CanSeeInvisible(context.Target,context.Source)):Advantage(AttackRoll); DetectDisturbancesBlock(true); Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Piercing,Resistant);Resistance(Fire,Resistant);Resistance(Cold,Resistant);Resistance(Acid,Resistant);Resistance(Poison,Resistant);Resistance(Thunder,Resistant);Resistance(Lightning,Resistant);Resistance(Radiant,Resistant);Resistance(Necrotic,Resistant);Resistance(Psychic,Resistant)"
+// data "RemoveEvents" ""
+// data "RemoveConditions" ""
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(GOON_EMPTY_BODY_SEEN,100,Target.EMPTY_BODY.Duration,,,,,true)"
+// data "StatusGroups" "SG_RemoveOnRespec"
+data "StatusGroups" "SG_Invisible;SG_RemoveOnRespec"
+
+new entry "GOON_EMPTY_BODY_SEEN"
+type "StatusData"
+data "StatusType" "INVISIBLE"
+using "EMPTY_BODY"
+// data "Boosts" "IgnoreLeaveAttackRange; Invisibility(); IF(not Goon_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not Goon_CanSeeInvisible(context.Target,context.Source)):Advantage(AttackRoll); DetectDisturbancesBlock(true); Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Piercing,Resistant);Resistance(Fire,Resistant);Resistance(Cold,Resistant);Resistance(Acid,Resistant);Resistance(Poison,Resistant);Resistance(Thunder,Resistant);Resistance(Lightning,Resistant);Resistance(Radiant,Resistant);Resistance(Necrotic,Resistant);Resistance(Psychic,Resistant)"
+data "Boosts" "IF(not Goon_CanSeeInvisible()):Disadvantage(AttackTarget); IF(not Goon_CanSeeInvisible(context.Target,context.Source)):Advantage(AttackRoll); Resistance(Bludgeoning,Resistant);Resistance(Slashing,Resistant);Resistance(Piercing,Resistant);Resistance(Fire,Resistant);Resistance(Cold,Resistant);Resistance(Acid,Resistant);Resistance(Poison,Resistant);Resistance(Thunder,Resistant);Resistance(Lightning,Resistant);Resistance(Radiant,Resistant);Resistance(Necrotic,Resistant);Resistance(Psychic,Resistant)"
+// data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering"
+data "StatusPropertyFlags" "UnavailableInActiveRoll;ExcludeFromPortraitRendering;DisableCombatlog"
+// data "RemoveConditions" ""
+data "RemoveConditions" "IsStatusEvent(StatusEvent.OnAttacked) or not HasStatus('SEE_INVISIBILITY_REVEAL')"
+// data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(GOON_EMPTY_BODY_SEEN,100,Target.EMPTY_BODY.Duration,,,,,true)"
+data "OnRemoveFunctors" "IF(RemoveCause(StatusRemoveCause.External) and not HasStatus('SEE_INVISIBILITY_REVEAL')):ApplyStatus(EMPTY_BODY,100,Target.GOON_EMPTY_BODY_SEEN.Duration,,,,,true)"
